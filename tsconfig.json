@@ -1,0 +1,16 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    "src",
+    ".eslintrc.cjs",
+    "tailwind.config.mjs",
+    "astro.config.mjs",
+    "jsx.d.ts",
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+}
