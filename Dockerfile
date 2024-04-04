@@ -6,6 +6,6 @@ RUN bun i
 COPY . .
 RUN bun run build
 
-FROM caddy:2-alphine
+FROM caddy:2-alpine
 COPY --from=build /app/dist /usr/share/caddy/
 EXPOSE 80
