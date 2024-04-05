@@ -1,11 +1,14 @@
 # syntax=docker/dockerfile:1
-FROM oven/bun:1-alpine as build
+FROM node:alpine as build
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 WORKDIR /app
-COPY package.json bun.lockb ./
-RUN apk add --update --no-cache python3 g++ make
-RUN bun i
 COPY . .
-RUN bun run build
+RUN apk add --update --no-cache \
+    python3 gcc g++ make
+RUN pnpm i
+RUN pnpm run build
 
 FROM caddy:2-alpine
 COPY --from=build /app/dist /usr/share/caddy/
