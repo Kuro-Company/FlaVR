@@ -10,8 +10,9 @@ import * as m from "../paraglide/messages.js";
 
     const elem = document.querySelector("#nav-header");
     const classes = [
-        "bg-rosePineDawn-surface",
-        "dark:bg-rosePineMoon-surface",
+        "bg-rosePineDawn-surface/75",
+        "dark:bg-rosePineMoon-surface/75",
+        "backdrop-blur-md",
     ];
     const toggleClasses = () => classes.forEach(c => elem?.classList.toggle(c));
 
