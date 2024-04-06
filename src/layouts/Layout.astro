@@ -46,7 +46,9 @@ const { title } = Astro.props;
     </head>
     <body class="bg-rosePineDawn-base dark:bg-rosePineMoon-base">
         <Nav />
-        <slot />
+        <div class="mt-[-5em] min-h-screen">
+            <slot />
+        </div>
         <Footer />
     </body>
 </html>

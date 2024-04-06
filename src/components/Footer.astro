@@ -8,10 +8,10 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="flex flex-col py-5 px-7 border-t-[1px] border-t-rosePineDawn-highlightLow dark:border-t-rosePineMoon-highlightLow">
-    <div class="flex flex-row items-center">
-        <div class="flex-1"></div>
-        <p class="text-sm text-center font-semibold leading-6 text-rosePineDawn-text dark:text-rosePineMoon-text">&copy {year} Kuro Company. All rights reserved.</p>
-        <div class="flex-1">
+    <div class="flex flex-col sm:flex-row items-center">
+        <div class="hidden sm:flex-1"></div>
+        <p class="text-sm text-center font-semibold leading-6 pb-5 sm:pb-0 text-rosePineDawn-text dark:text-rosePineMoon-text">&copy {year} Kuro Company. All rights reserved.</p>
+        <div class="sm:flex-1">
             <DarkModeToggle client:load>
                 <SunIcon slot="sun" />
                 <DeviceIcon slot="device" />
