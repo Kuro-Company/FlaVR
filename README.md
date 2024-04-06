@@ -4,6 +4,7 @@ The official unofficial website for FlaVR, a totally legit and real vtuber compa
 
 ## Stack
 - Astro
+- Svelte
 - Tailwind
 
 ## Notes
