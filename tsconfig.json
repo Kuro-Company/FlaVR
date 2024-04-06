@@ -2,7 +2,8 @@
   "extends": "astro/tsconfigs/strict",
   "include": [
     "src",
-    ".eslintrc.cjs",
+    ".eslintrc.js",
+    "eslint.config.js",
     "tailwind.config.mjs",
     "astro.config.mjs",
     "svelte.config.js",
