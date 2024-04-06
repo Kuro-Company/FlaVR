@@ -18,35 +18,15 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <script>
-            const css = document.createElement("style")
-            css.appendChild(
-                document.createTextNode(
-                    `* {
-                    -webkit-transition: none !important;
-                    -moz-transition: none !important;
-                    -o-transition: none !important;
-                    -ms-transition: none !important;
-                    transition: none !important;
-                    }`
-                )
-            );
+            import { changeTheme } from "../util/changeTheme";
 
-            document.head.appendChild(css);
-
-            if (localStorage.theme === "dark" || (!("theme" in localStorage || localStorage.theme === "device") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-                document.documentElement.classList.add("dark");
-            } else {
-                document.documentElement.classList.remove("dark");
-            }
-
-            const _ = window.getComputedStyle(css).opacity
-            document.head.removeChild(css)
+            changeTheme(localStorage.theme ?? "device");
         </script>
         <title>{title}</title>
     </head>
     <body class="bg-rosePineDawn-base dark:bg-rosePineMoon-base">
         <Nav />
-        <div class="mt-[-5em] min-h-screen">
+        <div class="mt-[-4.5em] min-h-screen">
             <slot />
         </div>
         <Footer />
