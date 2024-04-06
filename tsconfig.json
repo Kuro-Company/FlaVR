@@ -5,12 +5,11 @@
     ".eslintrc.cjs",
     "tailwind.config.mjs",
     "astro.config.mjs",
-    "jsx.d.ts",
+    "svelte.config.js",
+    "env.d.ts",
   ],
   "compilerOptions": {
     "allowJs": true,
     "moduleResolution": "Bundler",
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
   },
 }

@@ -1,3 +1,6 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format"
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "talents": "Talents",
+    "watch": "Watch",
+    "ariaOpenMenu": "Open Menu"
 }

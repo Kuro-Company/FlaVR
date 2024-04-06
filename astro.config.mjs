@@ -1,6 +1,7 @@
-import { defineConfig } from 'astro/config';
-import react from "@astrojs/react";
+import { defineConfig } from "astro/config";
+import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
 import paraglide from "@inlang/paraglide-js-adapter-astro";
 
 // https://astro.build/config
@@ -10,8 +11,9 @@ export default defineConfig({
         defaultLocale: "en",
     },
     integrations: [
-        react(),
+        svelte(),
         tailwind(),
+        icon(),
         paraglide({ project: "./project.inlang", outdir: "./src/paraglide" }),
     ]
 });

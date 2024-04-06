@@ -1,5 +1,5 @@
 ---
-// random code fence
+import * as m from "../paraglide/messages.js";
 ---
 
 <script>
@@ -7,21 +7,45 @@
     import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
     gsap.registerPlugin(ScrollTrigger);
+
+    const elem = document.querySelector("#nav-header");
+    const classes = [
+        "bg-rosePineDawn-surface",
+        "dark:bg-rosePineMoon-surface",
+        "py-5"
+    ];
+    const toggleClasses = () => classes.forEach(c => elem?.classList.toggle(c));
+
+    gsap.from(elem, {
+        scrollTrigger: {
+            start: "top -5",
+            end: 999999,
+            onEnter: toggleClasses,
+            onLeaveBack: toggleClasses,
+            onLeave: toggleClasses,
+            onEnterBack: toggleClasses
+        },
+    });
 </script>
 
-<header>
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+<header class="sticky top-0 z-50">
+    <nav id="nav-header" class="transition-all trnasition-100 mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 ">
         <div class="flex lg:flex-1">
             <a href="/" class="-m-1.5 p-1.5">
-                <!-- <span class="text-white">FlaVR</span> -->
+                <span class="sr-only">FlaVR</span>
                 <img src="flavr_with_color.svg" alt="" class="max-h-6">
             </a>
         </div>
+        <div class="flex lg:hidden">
+            <button>
+                <span class="sr-only">Open menu</span>
+            </button>
+        </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-md font-semibold leading-6 text-rosePineDawn-text">test</a>
+            <a href="#" class="text-md font-semibold leading-6 text-rosePineDawn-text dark:text-rosePineMoon-text">{m.talents()}</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" class="text-md font-semibold leading-6 text-rosePineDawn-text">seggs</a>
+            <a href="#" class="text-md font-semibold leading-6 text-rosePineDawn-text dark:text-rosePineMoon-text">{m.watch()}</a>
         </div>
     </nav>
 </header>
