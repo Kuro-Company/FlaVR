@@ -1,6 +1,9 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
+    "about": "About",
     "talents": "Talents",
+    "news": "News",
+    "community": "Community",
     "watch": "Watch",
     "ariaOpenMenu": "Open Menu"
 }

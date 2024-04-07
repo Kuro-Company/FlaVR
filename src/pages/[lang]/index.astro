@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getLangStaticPaths } from "../../util/getLangStaticPaths";
+
+export const getStaticPaths = getLangStaticPaths;
+---
+
+<script>
+    import { gsap } from "gsap";
+    import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
+
+    gsap.registerPlugin(MotionPathPlugin);
+
+    // gsap.to("#div", {
+    // 	motionPath: "#outline_f"
+    // })
+</script>
+
+<Layout>
+    <main class="min-h-screen">
+        <div class=""></div>
+    </main>
+</Layout>

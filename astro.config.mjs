@@ -9,6 +9,10 @@ export default defineConfig({
     i18n: {
         locales: ["en"],
         defaultLocale: "en",
+        routing: {
+            prefixDefaultLocale: true,
+            redirectToDefaultLocale: true,
+        }
     },
     integrations: [
         svelte(),
