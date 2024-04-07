@@ -1,7 +1,7 @@
 <script lang="ts">
     import DarkModeToggleButton from "./DarkModeToggleButton.svelte";
-    import { theme } from "../util/themeStore.ts";
-    import { changeTheme } from "../util/changeTheme.ts";
+    import { theme } from "~/util/themeStore.ts";
+    import { changeTheme } from "~/util/changeTheme.ts";
 
     if (typeof window !== "undefined") {
         theme.subscribe(v => {

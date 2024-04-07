@@ -1,0 +1,39 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
+
+export async function getStaticPaths() {
+    const pages = await getCollection("news");
+
+    const paths = pages.map(page => {
+        const [lang, ...slug] = page.slug.split("/");
+        return {
+            params: {
+                lang,
+                slug: slug.join("/"),
+            },
+            props: page,
+        };
+    });
+
+    return paths;
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { lang, slug } = Astro.params;
+const page = Astro.props;
+const publishedDate = page.data.publishedDate.toLocaleString(lang).split(",")[0];
+const updatedDate = page.data.updatedDate?.toLocaleString(lang).split(",")[0];
+
+const { Content } = await page.render();
+---
+
+<Layout title={`News: ${page.data.title}`}>
+    <Container></Container>
+    <h1>{page.data.title}</h1>
+    <p>by {page.data.author} \• {publishedDate}</p>
+    <Content/>
+</Layout>

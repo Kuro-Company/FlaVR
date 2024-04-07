@@ -1,0 +1,11 @@
+{
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "kuroCompany": "株式会社クロ",
+    "allRightsReserved": "版権所有",
+    "about": "会社概要",
+    "talents": "タレント",
+    "news": "ニュース",
+    "community": "コミュニティ",
+    "watch": "見る",
+    "ariaOpenMenu": "Open Menu"
+}

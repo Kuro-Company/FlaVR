@@ -1,5 +1,6 @@
 // @ts-check
 
+import globals from "globals";
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
 import eslintPluginSvelte from "eslint-plugin-svelte";
@@ -21,6 +22,9 @@ export default tseslint.config(
                 tsconfigRootDir: import.meta.dirname,
                 ecmaVersion: "latest",
                 sourceType: "module",
+            },
+            globals: {
+                ...globals.nodeBuiltin,
             },
         },
         rules: {

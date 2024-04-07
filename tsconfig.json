@@ -4,13 +4,21 @@
     "src",
     ".eslintrc.js",
     "eslint.config.js",
-    "tailwind.config.mjs",
-    "astro.config.mjs",
+    "tailwind.config.js",
+    "astro.config.js",
     "svelte.config.js",
-    "env.d.ts",
   ],
   "compilerOptions": {
     "allowJs": true,
     "moduleResolution": "Bundler",
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+    }
   },
 }
