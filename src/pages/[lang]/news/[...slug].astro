@@ -34,6 +34,6 @@ const { Content } = await page.render();
 <Layout title={`News: ${page.data.title}`}>
     <Container></Container>
     <h1>{page.data.title}</h1>
-    <p>by {page.data.author} \• {publishedDate}</p>
+    <p>by {page.data.author} • {publishedDate}</p>
     <Content/>
 </Layout>
