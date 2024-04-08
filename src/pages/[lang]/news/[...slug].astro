@@ -32,8 +32,15 @@ const { Content } = await page.render();
 ---
 
 <Layout title={`News: ${page.data.title}`}>
-    <Container></Container>
-    <h1>{page.data.title}</h1>
-    <p>by {page.data.author} • {publishedDate}</p>
-    <Content/>
+    <Container extraClasses="items-center justify-center">
+        <article class="flex flex-col items-center justify-center w-[85%] max-sm:w-[95%] text-base">
+            <div class="flex flex-col items-center justify-center my-6">
+                <h1 class="mb-6 text-5xl lg:text-6xl font-bold">{page.data.title}</h1>
+                <p class="font-bold lg:text-lg">by {page.data.author} • {publishedDate}</p>
+            </div>
+            <div class="prose max-sm:prose-sm max-w-none !text-rosePineDawn-text dark:!text-rosePineMoon-text">
+                <Content />
+            </div>
+        </article>
+    </Container>
 </Layout>
