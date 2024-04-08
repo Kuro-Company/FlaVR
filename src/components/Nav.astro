@@ -1,6 +1,9 @@
 ---
 import * as m from "~/paraglide/messages.js";
 import NavButton from "./NavButton.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const locale = Astro.currentLocale ?? "en";
 ---
 
 <script>
@@ -32,7 +35,7 @@ import NavButton from "./NavButton.astro";
 <header class="sticky top-0 z-50 w-full">
     <nav id="nav-header" class="transition-[padding-top,padding-bottom,background-color] transition-100 flex w-full items-center justify-between max-sm:p-6 py-4 px-8 lg:px-8 ">
         <div class="flex lg:flex-1">
-            <a href="/" class="-m-1.5 p-1.5">
+            <a href={getRelativeLocaleUrl(locale)} class="-m-1.5 p-1.5">
                 <span class="sr-only">FlaVR</span>
                 <img src="/flavr_with_color.svg" alt="" class="max-h-6">
             </a>
@@ -43,13 +46,13 @@ import NavButton from "./NavButton.astro";
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <NavButton>{m.about()}</NavButton>
-            <NavButton>{m.talents()}</NavButton>
-            <NavButton>{m.community()}</NavButton>
-            <NavButton>{m.news()}</NavButton>
+            <NavButton href={getRelativeLocaleUrl(locale, "about")}>{m.about()}</NavButton>
+            <NavButton href={getRelativeLocaleUrl(locale, "talents")}>{m.talents()}</NavButton>
+            <NavButton href={getRelativeLocaleUrl(locale, "community")}>{m.community()}</NavButton>
+            <NavButton href={getRelativeLocaleUrl(locale, "news")}>{m.news()}</NavButton>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <NavButton extraClasses="bg-rosePineDawn-highlightLow dark:bg-rosePineMoon-highlightLow">{m.watch()}</NavButton>
+            <NavButton extraClasses="bg-rosePineDawn-highlightLow dark:bg-rosePineMoon-highlightLow" href={getRelativeLocaleUrl(locale, "schedule")}>{m.watch()}</NavButton>
         </div>
     </nav>
 </header>

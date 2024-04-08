@@ -4,6 +4,7 @@ import DarkModeToggle from "./DarkModeToggle.svelte";
 import DeviceIcon from "./DeviceIcon.astro";
 import MoonIcon from "./MoonIcon.astro";
 import SunIcon from "./SunIcon.astro";
+import LanguageSelector from "./LanguageSelector.astro";
 
 const year = new Date().getFullYear();
 ---
@@ -12,12 +13,13 @@ const year = new Date().getFullYear();
     <div class="flex flex-col sm:flex-row items-center">
         <div class="max-sm:none sm:flex-1"></div>
         <p class="text-sm text-center font-semibold leading-6 pb-5 sm:pb-0 text-rosePineDawn-text dark:text-rosePineMoon-text">&copy {year} {m.kuroCompany()} {m.allRightsReserved()}</p>
-        <div class="sm:flex-1">
+        <div class="flex flex-row justify-end items-center gap-4 sm:flex-1">
             <DarkModeToggle client:load>
                 <SunIcon slot="sun" />
                 <DeviceIcon slot="device" />
                 <MoonIcon slot="moon" />
             </DarkModeToggle>
+            <LanguageSelector />
         </div>
     </div>
 </footer>

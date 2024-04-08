@@ -1,0 +1,33 @@
+---
+import { Icon } from "astro-icon/components";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { availableLanguageTags } from "~/paraglide/runtime";
+---
+
+<script>
+    const elem = document.getElementById("langselect")!;
+
+    const observer = new ResizeObserver(() => {
+        const fit = elem.clientHeight <= 128;
+        elem.style.overflowY = fit ? "hidden" : "";
+    });
+
+    observer.observe(elem);
+</script>
+
+<div class="relative inline-block text-center group">
+    <button class="peer h-full cursor-pointer p-2.5 rounded-md bg-rosePineDawn-highlightMed dark:bg-rosePineMoon-highlightMed hover:bg-opacity-80">
+        <Icon size={20} name={`circle-flags:${Astro.currentLocale ?? "en"}`} />
+    </button>
+    <div class="z-10 absolute hidden group-focus-within:block bottom-12 right-[50%] translate-x-[50%] bg-rosePineDawn-surface dark:bg-rosePineMoon-surface divide-y divide-rosePineDawn-muted dark:divide-rosePineMoon-muted rounded-lg">
+        <ul id="langselect" class="py-2 text-sm max-h-32 overflow-y-scroll">
+            {availableLanguageTags.map((lang) => 
+                <li>
+                    <a href={getRelativeLocaleUrl(lang)} class="block px-2 mx-2 py-2 rounded-lg hover:bg-rosePineDawn-overlay hover:dark:bg-rosePineMoon-overlay">
+                        <Icon size={20} name={`circle-flags:${lang}`} />
+                    </a>
+                </li>
+            )}
+        </ul>
+    </div>
+</div>

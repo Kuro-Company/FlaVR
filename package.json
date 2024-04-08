@@ -16,6 +16,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/ts-plugin": "^1.6.1",
     "@gsap/react": "^2.1.0",
+    "@iconify-json/circle-flags": "^1.1.47",
     "@iconify-json/tabler": "^1.1.109",
     "@inlang/paraglide-js-adapter-astro": "^0.1.19",
     "@nanostores/persistent": "^0.10.1",
