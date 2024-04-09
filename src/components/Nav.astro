@@ -2,6 +2,7 @@
 import * as m from "~/paraglide/messages.js";
 import NavButton from "./NavButton.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { Icon } from "astro-icon/components";
 
 const locale = Astro.currentLocale ?? "en";
 ---
@@ -20,7 +21,7 @@ const locale = Astro.currentLocale ?? "en";
     ];
     const toggleClasses = () => classes.forEach(c => elem?.classList.toggle(c));
 
-    gsap.from(elem, {
+    gsap.from([elem], {
         scrollTrigger: {
             start: "top -1",
             end: 999999,
@@ -33,26 +34,46 @@ const locale = Astro.currentLocale ?? "en";
 </script>
 
 <header class="sticky top-0 z-50 w-full">
-    <nav id="nav-header" class="flex w-full items-center justify-between max-sm:p-6 py-4 px-8 lg:px-8 ">
-        <div class="flex lg:flex-1">
+    {/* The extremely cursed segments in the class is to show and hide the 2 icons in the mobile menu toggle. */}
+    <input type="checkbox" id="mobile-menu" class="peer/nav hidden [&:checked~#nav-header_*_*_.nav-icon]:hidden [&:checked~#nav-header_*_*_.nav-x]:block">
+
+    <nav id="nav-header" class="flex w-full items-center justify-between max-md:py-6 py-4 px-8">
+        <div class="flex md:flex-1">
             <a href={getRelativeLocaleUrl(locale)} class="-m-1.5 p-1.5">
                 <span class="sr-only">FlaVR</span>
                 <img src="/flavr_with_color.svg" alt="" class="max-h-6">
             </a>
         </div>
-        <div class="flex lg:hidden">
-            <button>
+
+        {/* Mobile menu toggle */}
+        <div class="flex md:hidden">
+            <label for="mobile-menu" class="cursor-pointer -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 hover:bg-rosePineDawn-highlightMed dark:hover:bg-rosePineMoon-highlightMed text-rosePineDawn-text dark:text-rosePineMoon-text">
                 <span class="sr-only">Open menu</span>
-            </button>
+                <Icon name="tabler:menu-2" class="nav-icon" />
+                <Icon name="tabler:x" class="hidden nav-x" />
+            </label>
         </div>
-        <div class="hidden lg:flex lg:gap-x-12">
+
+        {/* Wide nav */}
+        <div class="hidden md:flex md:gap-x-8">
             <NavButton href={getRelativeLocaleUrl(locale, "about")}>{m.about()}</NavButton>
             <NavButton href={getRelativeLocaleUrl(locale, "talents")}>{m.talents()}</NavButton>
             <NavButton href={getRelativeLocaleUrl(locale, "community")}>{m.community()}</NavButton>
             <NavButton href={getRelativeLocaleUrl(locale, "news")}>{m.news()}</NavButton>
         </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+
+        <div class="hidden md:flex md:flex-1 md:justify-end">
             <NavButton extraClasses="bg-rosePineDawn-highlightLow dark:bg-rosePineMoon-highlightLow" href={getRelativeLocaleUrl(locale, "schedule")}>{m.watch()}</NavButton>
         </div>
     </nav>
+
+    {/* Mobile menu */}
+    <div class="hidden max-md:block absolute max-md:peer-checked/nav:transform max-md:peer-checked/nav:translate-y-full bottom-full transition-transform ease-in-out duration-500 -z-10 w-full h-screen overflow-y-auto bg-rosePineDawn-surface/75 dark:bg-rosePineMoon-surface/75 backdrop-blur-md py-4 px-8">
+        <div class="flex flex-col gap-4 mt-20">
+            <NavButton extraClasses="!text-3xl !font-bold" href={getRelativeLocaleUrl(locale, "about")}>{m.about()}</NavButton>
+            <NavButton extraClasses="!text-3xl !font-bold" href={getRelativeLocaleUrl(locale, "talents")}>{m.talents()}</NavButton>
+            <NavButton extraClasses="!text-3xl !font-bold" href={getRelativeLocaleUrl(locale, "community")}>{m.community()}</NavButton>
+            <NavButton extraClasses="!text-3xl !font-bold" href={getRelativeLocaleUrl(locale, "news")}>{m.news()}</NavButton>    
+        </div>
+    </div>
 </header>
