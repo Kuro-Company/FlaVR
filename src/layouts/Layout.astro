@@ -36,7 +36,7 @@ const { title } = Astro.props;
                 }
             });
         </script>
-        <script is:inline defer src="https://umami-f08k0kw.apps1.nekos.cloud/script.js" data-website-id="825bf790-c4b7-405c-b656-c814d80c574d"></script>
+        <script is:inline defer src={import.meta.env.PUBLIC_UMAMI_SRC as string ?? ""} data-website-id={import.meta.env.PUBLIC_UMAMI_SITE as string ?? ""}></script>
         <meta name="generator" content={Astro.generator} />
         <title>FlaVR - {title}</title>
     </head>
