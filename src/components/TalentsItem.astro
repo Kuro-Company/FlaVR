@@ -8,7 +8,7 @@ interface Props {
 const { url, name, image } = Astro.props;
 ---
 <li>
-    <a style={`background-image: url('/image/profile/${image}.avif')`} class="grid rounded-md shadow before:content-[''] before:pb-[100%] before:block before:[grid-area:1/1/2/2] bg-contain cursor-pointer bg-rosePineDawn-surface dark:bg-rosePineMoon-surface hover:opacity-70" href={url}>
+    <a style={`background-image: url('/image/profile/${image}.webp')`} class="grid rounded-md shadow before:content-[''] before:pb-[100%] before:block before:[grid-area:1/1/2/2] bg-contain cursor-pointer bg-rosePineDawn-surface dark:bg-rosePineMoon-surface hover:opacity-70" href={url}>
         <div class="grid items-end [grid-area:1/1/2/2]">
             <p class="rounded-b-md bg-gradient-to-b from-transparent from-10% to-rosePineDawn-overlay dark:to-rosePineMoon-overlay p-4 pt-16 font-semibold">{name}</p>
         </div>
