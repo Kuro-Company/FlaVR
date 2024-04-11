@@ -1,2 +1,6 @@
 * text eol=lf
 *.lockb binary diff=lockb
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
