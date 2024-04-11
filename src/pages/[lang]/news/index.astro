@@ -1,22 +1,12 @@
 ---
 import * as m from "~/paraglide/messages.js";
 import Layout from "~/layouts/Layout.astro";
-import Container from "~/components/Container.astro";
+import Container from "~/components/Container.astro"
 import { getLangStaticPaths } from "~/util/getLangStaticPaths";
-import { getCollection } from "astro:content";
-import NewsItem from "~/components/NewsItem.astro";
-import { getRelativeLocaleUrl } from "astro:i18n";
 
 export const getStaticPaths = getLangStaticPaths;
-
-const newsItems = await getCollection("news");
 ---
 
 <Layout title={m.news()}>
-    <Container>
-        <h1 class="text-5xl font-bold mb-8">{m.news()}</h1>
-        <ul class="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-4">
-            {newsItems.map(({ slug, data }) =>  <NewsItem url={getRelativeLocaleUrl(Astro.currentLocale ?? "en", `news/${slug.split("/")[1]}`)} title={data.title} description={data.description} date={data.publishedDate} />)}
-        </ul>
-    </Container>
+    <Container></Container>
 </Layout>

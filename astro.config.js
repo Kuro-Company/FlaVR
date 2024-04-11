@@ -12,12 +12,12 @@ export default defineConfig({
         defaultLocale: "en",
         routing: {
             prefixDefaultLocale: true,
-        },
+        }
     },
     integrations: [
         svelte(),
         tailwind(),
         icon(),
         paraglide({ project: "./project.inlang", outdir: "./src/paraglide" }),
-    ],
+    ]
 });
