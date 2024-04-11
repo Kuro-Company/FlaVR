@@ -75,23 +75,23 @@ export default {
                                 "figure figcaption",
                                 "code",
                                 "a code",
-                                "thead"
+                                "thead",
                             ].join(", ")
                         ]: {
-                            color: "inherit"
+                            color: "inherit",
                         },
                         "ul > li::before": {
-                            backgroundColor: "currentColor"
+                            backgroundColor: "currentColor",
                         },
                         [
                             [
                                 "hr",
                                 "blockquote",
                                 "thead",
-                                "tbody tr"
+                                "tbody tr",
                             ].join(", ")
                         ]: {
-                            borderColor: "currentColor"
+                            borderColor: "currentColor",
                         },
                     },
                 },
