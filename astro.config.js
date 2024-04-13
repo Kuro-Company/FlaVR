@@ -3,6 +3,7 @@ import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import paraglide from "@inlang/paraglide-js-adapter-astro";
+import { purgeCss } from "vite-plugin-tailwind-purgecss";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +14,12 @@ export default defineConfig({
         routing: {
             prefixDefaultLocale: true,
         },
+    },
+    vite: {
+        build: {
+            sourcemap: true,
+        },
+        plugins: [purgeCss()],
     },
     integrations: [
         svelte(),
