@@ -22,7 +22,7 @@ const talents = defineCollection({
         description: z.string(),
         images: z.array(z.string()),
         socialMedia: z.object({
-            youtube: z.optional(z.array(z.string())),
+            youtube: z.optional(z.string()),
             twitch: z.optional(z.string()),
             twitter: z.optional(z.string()),
         }),
