@@ -9,7 +9,7 @@ import { purgeCss } from "vite-plugin-tailwind-purgecss";
 export default defineConfig({
     trailingSlash: "always",
     i18n: {
-        locales: ["en", "ja"],
+        locales: ["en", "es", "ja"],
         defaultLocale: "en",
         routing: {
             prefixDefaultLocale: true,
