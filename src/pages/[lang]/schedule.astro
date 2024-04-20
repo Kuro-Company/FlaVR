@@ -6,15 +6,15 @@ import { getLangStaticPaths } from "~/util/getLangStaticPaths";
 
 export const getStaticPaths = getLangStaticPaths;
 const LiveVideoIds = [
-  "ox_OSNBKrY4",
-  "fHbmgharsL4",
-  "6NE_u1tCCMg",
-  // Add more video IDs here
+    "ox_OSNBKrY4",
+    "fHbmgharsL4",
+    "6NE_u1tCCMg",
+    // Add more video IDs here
 ];
 const UpcomingVideoIds = [
-  "ox_OSNBKrY4",
-  "fHbmgharsL4",
-  "6NE_u1tCCMg",
+    "ox_OSNBKrY4",
+    "fHbmgharsL4",
+    "6NE_u1tCCMg",
 ];
 
 ---
@@ -26,34 +26,34 @@ const UpcomingVideoIds = [
         <br>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {LiveVideoIds.map((LivevideoId) => (
-          <div class="relative" style="padding-bottom: 60%;">
-            <iframe
-              class="absolute top-0 left-0 w-full h-full"
-              title="wow"
-              src={`https://www.youtube.com/embed/${LivevideoId}`}
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
+            <div class="relative" style="padding-bottom: 60%;">
+                <iframe
+                    class="absolute top-0 left-0 w-full h-full"
+                    title="wow"
+                    src={`https://www.youtube.com/embed/${LivevideoId}`}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                />
+            </div>
         ))}
-      </div>
-      <h2 class="text-4xl font-extrabold dark:text-white">Upcoming</h2>
-      <hr>
-        <br>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {UpcomingVideoIds.map((UpcomingVideoId) => (
-          <div class="relative" style="padding-bottom: 60%;">
-            <iframe
-              class="absolute top-0 left-0 w-full h-full"
-              title="wow"
-              src={`https://www.youtube.com/embed/${UpcomingVideoId}`}
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-        ))}
-      </div>
+        </div>
+        <h2 class="text-4xl font-extrabold dark:text-white">Upcoming</h2>
+        <hr>
+            <br>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {UpcomingVideoIds.map((UpcomingVideoId) => (
+                <div class="relative" style="padding-bottom: 60%;">
+                    <iframe
+                        class="absolute top-0 left-0 w-full h-full"
+                        title="wow"
+                        src={`https://www.youtube.com/embed/${UpcomingVideoId}`}
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    />
+                </div>
+            ))}
+        </div>
     </Container>
 </Layout>
