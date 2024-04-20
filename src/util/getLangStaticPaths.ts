@@ -5,8 +5,8 @@ export const getLangStaticPaths: GetStaticPaths = () => {
     return availableLanguageTags.map((tag) => {
         return {
             params: {
-                lang: tag
+                lang: tag,
             },
         };
     });
-}
+};
