@@ -13,6 +13,13 @@ export default defineConfig({
         defaultLocale: "en",
         routing: {
             prefixDefaultLocale: true,
+            redirectToDefaultLocale: false,
+        },
+    },
+    redirects: {
+        "/": {
+            status: 302,
+            destination: "/en/",
         },
     },
     vite: {
