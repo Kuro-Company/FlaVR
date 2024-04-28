@@ -8,7 +8,6 @@ export default tseslint.config(
     eslint.configs.recommended,
     ...tseslint.configs.stylisticTypeChecked,
     ...tseslint.configs.recommendedTypeChecked,
-    // @ts-expect-error incompatible type declarations that are compatible
     ...eslintPluginSvelte.configs["flat/recommended"],
     jsConfig(),
     await tsConfig(),
