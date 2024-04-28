@@ -7,6 +7,10 @@
         theme.subscribe(v => {
             changeTheme(v);
         });
+
+        window.addEventListener("focus", () => {
+            changeTheme(localStorage.theme)
+        });
     }
 </script>
 
