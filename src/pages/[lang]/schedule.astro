@@ -16,8 +16,11 @@ const UpcomingVideoIds = [
     "fHbmgharsL4",
     "6NE_u1tCCMg",
 ];
-
 ---
+<script>
+    import "lite-youtube-embed";
+    import "lite-youtube-embed/src/lite-yt-embed.css";
+</script>
 
 <Layout title={m.schedule()}>
     <Container>
@@ -25,16 +28,9 @@ const UpcomingVideoIds = [
         <hr>
         <br>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {LiveVideoIds.map((LivevideoId) => (
-            <div class="relative" style="padding-bottom: 60%;">
-                <iframe
-                    class="absolute top-0 left-0 w-full h-full"
-                    title="wow"
-                    src={`https://www.youtube.com/embed/${LivevideoId}`}
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                />
+        {LiveVideoIds.map((vid) => (
+            <div class="relative">
+                <lite-youtube videoid={vid} params="autoplay=1"></lite-youtube>
             </div>
         ))}
         </div>
@@ -42,17 +38,8 @@ const UpcomingVideoIds = [
         <hr>
             <br>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {UpcomingVideoIds.map((UpcomingVideoId) => (
-                <div class="relative" style="padding-bottom: 60%;">
-                    <iframe
-                        class="absolute top-0 left-0 w-full h-full"
-                        title="wow"
-                        src={`https://www.youtube.com/embed/${UpcomingVideoId}`}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                    />
-                </div>
+            {UpcomingVideoIds.map((vid) => (
+                <lite-youtube videoid={vid} params="autoplay=1"></lite-youtube>
             ))}
         </div>
     </Container>
