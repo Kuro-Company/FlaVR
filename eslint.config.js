@@ -2,16 +2,18 @@ import globals from "globals";
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
 import eslintPluginSvelte from "eslint-plugin-svelte";
-import { typescript as tsConfig, javascript as jsConfig, astro as astroConfig } from "@augu/eslint-config";
+import eslintPluginAstro from "eslint-plugin-astro";
+import { typescript as tsConfig, javascript as jsConfig } from "@augu/eslint-config";
 
 export default tseslint.config(
     eslint.configs.recommended,
     ...tseslint.configs.stylisticTypeChecked,
     ...tseslint.configs.recommendedTypeChecked,
     ...eslintPluginSvelte.configs["flat/recommended"],
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    ...eslintPluginAstro.configs["flat/recommended"],
     jsConfig(),
     await tsConfig(),
-    await astroConfig(),
     {
         languageOptions: {
             parserOptions: {
