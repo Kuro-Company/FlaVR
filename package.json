@@ -38,7 +38,6 @@
     "@types/eslint__js": "^8.42.3",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
-    "astro-eslint-parser": "^1.0.2",
     "eslint": "^9.1.1",
     "eslint-plugin-astro": "^1.1.2",
     "globals": "^15.1.0",
