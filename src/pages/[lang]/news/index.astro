@@ -9,7 +9,8 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 
 export const getStaticPaths = getLangStaticPaths;
 
-const newsItems = await getCollection("news");
+const collection = await getCollection("news");
+const newsItems = collection.filter(({ id }) => id.startsWith(Astro.currentLocale!));
 ---
 
 <Layout title={m.news()}>
