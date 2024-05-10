@@ -23,7 +23,7 @@ import { availableLanguageTags } from "~/paraglide/runtime";
         <ul id="langselect" class="py-2 text-sm max-h-32 overflow-y-scroll">
             {availableLanguageTags.map((lang) => 
                 <li>
-                    <a href={`${getRelativeLocaleUrl(lang)}${Astro.url.pathname.replace(`/${Astro.currentLocale}/`, "")}`} class="block px-2 mx-2 py-2 rounded-lg hover:bg-rosePineDawn-overlay hover:dark:bg-rosePineMoon-overlay">
+                    <a tabindex="0" href={`${getRelativeLocaleUrl(lang)}${Astro.url.pathname.replace(`/${Astro.currentLocale}/`, "")}`} class="block px-2 mx-2 py-2 rounded-lg hover:bg-rosePineDawn-overlay hover:dark:bg-rosePineMoon-overlay">
                         <Icon size={20} name={`circle-flags:${lang}`} />
                     </a>
                 </li>
