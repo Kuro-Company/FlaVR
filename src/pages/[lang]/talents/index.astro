@@ -9,7 +9,8 @@ import TalentsItem from "~/components/TalentsItem.astro";
 
 export const getStaticPaths = getLangStaticPaths;
 
-const talents = await getCollection("talents");
+const collection = await getCollection("talents");
+const talents = collection.filter(({ id }) => id.startsWith(Astro.currentLocale!));
 
 ---
 
