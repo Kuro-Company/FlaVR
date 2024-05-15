@@ -29,4 +29,21 @@ const talents = defineCollection({
     }),
 });
 
-export const collections = { news, talents };
+const team = defineCollection({
+    type: "data",
+    schema: z.object({
+        name: z.string(),
+        description: z.string(),
+        image: z.string(),
+    }),
+});
+
+const legal = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+        updatedDate: z.coerce.date(),
+    }),
+});
+
+export const collections = { news, talents, team, legal };
