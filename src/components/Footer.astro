@@ -1,5 +1,6 @@
 ---
 import * as m from "~/paraglide/messages.js";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import DarkModeToggle from "./DarkModeToggle.svelte";
 import DeviceIcon from "./DeviceIcon.astro";
 import MoonIcon from "./MoonIcon.astro";
@@ -7,12 +8,21 @@ import SunIcon from "./SunIcon.astro";
 import LanguageSelector from "./LanguageSelector.astro";
 
 const year = new Date().getFullYear();
+const locale = Astro.currentLocale ?? "en";
 ---
 
-<footer class="flex flex-col py-5 px-7 border-t-[1px] border-t-rosePineDawn-highlightMed dark:border-t-rosePineMoon-highlightMed">
+<footer class="flex flex-col py-5 px-8 border-t-[1px] border-t-rosePineDawn-highlightMed dark:border-t-rosePineMoon-highlightMed">
+    <div class="flex flex-col sm:flex-row items-center sm:justify-between">
+        <img class="max-w-72 dark:invert" src="/kuro_company.svg" alt="Kuro Company">
+        <div class="sm:self-start flex flex-wrap items-center text-md font-semibold gap-4 text-rosePineDawn-text dark:text-rosePineMoon-text">
+            <a href={getRelativeLocaleUrl(locale, "legal/privacy")} class="hover:underline">Privacy</a>
+            <a href={getRelativeLocaleUrl(locale, "legal/terms")} class="hover:underline">Terms</a>
+            <a href="" class="hover:underline">Contact</a>
+        </div>
+    </div>
     <div class="flex flex-col sm:flex-row items-center">
-        <div class="max-sm:none sm:flex-1"></div>
-        <p class="text-sm text-center font-semibold leading-6 pb-5 sm:pb-0 text-rosePineDawn-text dark:text-rosePineMoon-text">&copy {year} {m.kuroCompany()} {m.allRightsReserved()}</p>
+        <!-- <div class="max-sm:none sm:flex-1"></div> -->
+        <p class="text-sm text-center font-semibold leading-6 pb-3 sm:pb-0 text-rosePineDawn-text dark:text-rosePineMoon-text">&copy {year} {m.kuroCompany()} {m.allRightsReserved()}</p>
         <div class="flex flex-row justify-end items-center gap-4 sm:flex-1">
             <DarkModeToggle client:load>
                 <SunIcon slot="sun" />
