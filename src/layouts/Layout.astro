@@ -4,16 +4,17 @@ import Footer from "~/components/Footer.astro";
 
 interface Props {
     title: string;
+    description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={Astro.locals.paraglide.lang} dir={Astro.locals.paraglide.dir}>
     <head>
         <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
+        <meta name="description" content={description ?? "The world's first open source virtual entertaiment circle from Kuro Company."} />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml">
