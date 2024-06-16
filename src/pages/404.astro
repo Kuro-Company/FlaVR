@@ -1,0 +1,11 @@
+---
+import * as m from "~/paraglide/messages.js";
+import Layout from "~/layouts/Layout.astro";
+---
+
+<Layout title={"404"}>
+    <div class="flex flex-col justify-center items-center min-h-screen">
+        <h1 class="text-8xl max-sm:text-6xl font-bold">404</h1>
+        <p class="text-5xl max-sm:text-4xl font-semibold">{m.pageNotFound({ languageTag: "en" })}</p>
+    </div>
+</Layout>
