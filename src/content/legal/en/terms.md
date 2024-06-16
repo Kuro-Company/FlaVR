@@ -1,5 +1,6 @@
 ---
 title: Terms of Service
+description: Like the Ten Crack Commandments, but legalese. Rules that you agree to when you visit this website.
 updatedDate: 2024-04-07T20:09:44+00:00
 ---
 

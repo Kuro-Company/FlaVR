@@ -1,6 +1,6 @@
 ---
-title: Privacy Policy
-description: Too late we're already in your walls. How your data is collected and handled by this website.
+title: Information for Minors
+description: why did we even need to write this
 updatedDate: 2024-04-07T20:09:44+00:00
 ---
 

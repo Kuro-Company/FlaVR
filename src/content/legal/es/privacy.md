@@ -1,5 +1,6 @@
 ---
 title: Privacy Policy
+description: How your data is collected and handled by this website.
 updatedDate: 2024-04-07T20:09:44+00:00
 ---
 
