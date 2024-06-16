@@ -1,0 +1,19 @@
+---
+import * as m from "~/paraglide/messages.js";
+
+interface Props {
+    url: string;
+    title: string;
+    description: string;
+    date: Date;
+}
+
+const { url, title, description, date } = Astro.props;
+---
+<li class="h-full">
+    <a class="h-full flex flex-col rounded-md shadow p-4 cursor-pointer bg-rosePineDawn-surface dark:bg-rosePineMoon-surface hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay" href={url}>
+        <p class="text-xs text-rosePineDawn-text/90 dark:text-rosePineMoon-text/90">{m.lastUpdated({ date: date.toLocaleString(Astro.currentLocale, { dateStyle: "long" }) })}</p>
+        <h3 class="text-2xl font-bold">{title}</h3>
+        <p class="text-rosePineDawn-text/90 dark:text-rosePineMoon-text/90">{description}</p>
+    </a>
+</li>

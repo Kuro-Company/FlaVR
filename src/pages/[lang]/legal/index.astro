@@ -1,0 +1,23 @@
+---
+import * as m from "~/paraglide/messages.js";
+import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
+import { getLangStaticPaths } from "~/util/getLangStaticPaths";
+import { getCollection } from "astro:content";
+import LegalItem from "~/components/LegalItem.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+export const getStaticPaths = getLangStaticPaths;
+
+const collection = await getCollection("legal");
+const legalItems = collection.filter(({ id }) => id.startsWith(Astro.currentLocale!));
+---
+
+<Layout title={m.legal()}>
+    <Container>
+        <h1 class="text-5xl font-bold mb-8">{m.legal()}</h1>
+        <ul class="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] auto-rows-1 gap-4">
+            {legalItems.map(({ slug, data }) =>  <LegalItem url={getRelativeLocaleUrl(Astro.currentLocale ?? "en", `legal/${slug.split("/")[1]}`)} title={data.title} description={data.description} date={data.updatedDate} />)}
+        </ul>
+    </Container>
+</Layout>
