@@ -17,12 +17,12 @@ const { images } = Astro.props;
     next?.addEventListener("click", () => embla.scrollNext(), false);
 </script>
 
-<div class="embla relative overflow-hidden m-auto rounded-xl bg-rosePineDawn-highlightLow dark:bg-rosePineMoon-highlightLow">
+<div class="embla relative overflow-hidden m-auto rounded-xl aspect-square bg-rosePineDawn-highlightLow dark:bg-rosePineMoon-highlightLow">
     <div class="embla__viewport">
         <div class="embla__container [backface-visibility:hidden] flex touch-pan-y">
             {images.map((img) => (
                 <div class="embla__slide [flex:0_0_100%] min-w-0 mx-1">
-                    <img class="rounded-xl" src={img} alt="" />
+                    <img class="rounded-xl w-full" src={img} alt="" />
                 </div>
             ))}
         </div>
