@@ -3,6 +3,7 @@ import type { InferGetStaticPropsType } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "~/layouts/Layout.astro";
 import Container from "~/components/Container.astro";
+import Tag from "~/components/Tag.astro";
 
 export async function getStaticPaths() {
     const pages = await getCollection("news");
@@ -33,9 +34,14 @@ const { Content } = await page.render();
 <Layout title={page.data.title}>
     <Container extraClasses="items-center justify-center">
         <article class="flex flex-col items-center justify-center text-base">
-            <div class="flex flex-col items-start justify-center w-full my-6">
-                <h1 class="mb-2 text-4xl lg:text-6xl font-bold">{page.data.title}</h1>
+            <div class="flex flex-col items-start justify-center w-full my-6 gap-2">
+                <h1 class="text-4xl lg:text-6xl font-bold">{page.data.title}</h1>
                 <p class="lg:text-lg">Written by <span class="font-bold">{page.data.author}</span> on <span class="font-bold">{publishedDate}</span><Fragment set:html={updatedDate ? ` (last updated on <span class="font-bold">${updatedDate}</span>).` : "."} /></p>
+                <div class="flex flex-row flex-wrap gap-2">
+                    {page.data.tags?.map((tag) => (
+                        <Tag name={tag} />
+                    ))}
+                </div>
             </div>
             <div class="prose max-sm:prose-sm max-w-none !text-rosePineDawn-text dark:!text-rosePineMoon-text">
                 <Content />
