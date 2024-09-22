@@ -1,0 +1,34 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
+
+export async function getStaticPaths() {
+    const pages = await getCollection("page");
+
+    const paths = pages.map(page => {
+        const [lang, ...slug] = page.slug.split("/");
+        return {
+            params: {
+                lang,
+                slug: slug.join("/"),
+            },
+            props: page,
+        };
+    });
+
+    return paths;
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const page = Astro.props;
+const { Content } = await page.render();
+---
+
+<Layout title={page.data.title}>
+    <Container extraClasses="items-center justify-center">
+        <Content />
+    </Container>
+</Layout>
