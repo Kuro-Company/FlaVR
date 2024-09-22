@@ -1,0 +1,51 @@
+---
+import * as m from "~/paraglide/messages.js";
+import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
+import { getCollection } from "astro:content";
+import NewsItem from "~/components/NewsItem.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { InferGetStaticPropsType } from "astro";
+import { isAvailableLanguageTag } from "~/paraglide/runtime";
+
+
+export async function getStaticPaths() {
+    const collection = await getCollection("news");
+    const langs = collection.map(({ slug }) => slug.split("/")[0]);
+
+    const tags = langs.map((lang) => {
+        const pages = collection.filter(({ slug }) => slug.split("/")[0] === lang);
+        const tags = [...new Set(pages.map(({ data }) => data.tags).flat())]
+            .map(tag => tag ?? m.uncategorized({}, { languageTag: isAvailableLanguageTag(lang) ? lang : "en" }))
+            .map(tag => ({ tag, lang, pages: pages.filter(({ data }) => data.tags?.includes(tag)) }));
+
+        return tags;
+    }).flat();
+
+    return tags.map(({ tag, lang, pages }) => {
+        return {
+            params: {
+                lang,
+                tag,
+            },
+            props: {
+                newsItems: pages,
+            },
+        };
+    });
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { tag } = Astro.params;
+const { newsItems } = Astro.props;
+---
+
+<Layout title={m.newsTagged({ tag })}>
+    <Container>
+        <h1 class="text-5xl font-bold mb-8">{m.newsTagged({ tag })}</h1>
+        <ul class="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] auto-rows-1 gap-4">
+            {newsItems.map(({ slug, data }) => <NewsItem url={getRelativeLocaleUrl(Astro.currentLocale ?? "en", `news/${slug.split("/")[1]}`)} title={data.title} description={data.description} date={data.publishedDate} tags={data.tags} />)}
+        </ul>
+    </Container>
+</Layout>

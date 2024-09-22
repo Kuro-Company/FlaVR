@@ -1,0 +1,31 @@
+---
+import * as m from "~/paraglide/messages.js";
+import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
+import { getLangStaticPaths } from "~/util/getLangStaticPaths";
+import { getCollection } from "astro:content";
+import { isAvailableLanguageTag } from "~/paraglide/runtime";
+
+export const getStaticPaths = getLangStaticPaths;
+
+const collection = await getCollection("news");
+const pages = collection.filter(({ id }) => id.startsWith(Astro.currentLocale!));
+const tags = [...new Set(pages.map(({ data }) => data.tags).flat())]
+    .map(tag => tag ?? m.uncategorized({}, { languageTag: isAvailableLanguageTag(Astro.currentLocale!) ? Astro.currentLocale : "en" }))
+    .flat();
+---
+
+<Layout title={m.categories()}>
+    <Container>
+        <h1 class="text-5xl font-bold mb-8">{m.categories()}</h1>
+        <ul class="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] auto-rows-1 gap-4">
+            {tags.map((tag) => (
+                <li class="h-full min-h-36 relative">
+                    <a class="h-full flex flex-col justify-center rounded-md shadow p-4 cursor-pointer bg-rosePineDawn-surface dark:bg-rosePineMoon-surface hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay" href={`/${Astro.currentLocale ?? "en"}/news/tags/${tag}/`}>
+                        <h3 class="text-3xl text-center font-bold">{tag}</h3>
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </Container>
+</Layout>

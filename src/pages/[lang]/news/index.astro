@@ -17,7 +17,7 @@ const newsItems = collection.filter(({ id }) => id.startsWith(Astro.currentLocal
     <Container>
         <h1 class="text-5xl font-bold mb-8">{m.news()}</h1>
         <ul class="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] auto-rows-1 gap-4">
-            {newsItems.map(({ slug, data }) =>  <NewsItem url={getRelativeLocaleUrl(Astro.currentLocale ?? "en", `news/${slug.split("/")[1]}`)} title={data.title} description={data.description} date={data.publishedDate} />)}
+            {newsItems.map(({ slug, data }) =>  <NewsItem url={getRelativeLocaleUrl(Astro.currentLocale ?? "en", `news/${slug.split("/")[1]}`)} title={data.title} description={data.description} date={data.publishedDate} tags={data.tags} />)}
         </ul>
     </Container>
 </Layout>

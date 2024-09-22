@@ -3,6 +3,7 @@ title: test2
 author: test2
 description: test2
 publishedDate: 2024-04-07T20:09:44+00:00
+tags: [test]
 ---
 
 # seggs seggs

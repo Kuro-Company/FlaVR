@@ -9,6 +9,7 @@ const news = defineCollection({
         publishedDate: z.coerce.date(),
         updatedDate: z.coerce.date().optional(),
         image: z.string().optional(),
+        tags: z.array(z.string()).optional(),
     }),
 });
 
