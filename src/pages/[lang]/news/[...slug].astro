@@ -23,7 +23,6 @@ export async function getStaticPaths() {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { lang, slug } = Astro.params;
 const page = Astro.props;
 const publishedDate = page.data.publishedDate.toLocaleString(Astro.currentLocale, { dateStyle: "long" });
 const updatedDate = page.data.updatedDate?.toLocaleString(Astro.currentLocale, { dateStyle: "long" });

@@ -3,7 +3,6 @@ import type { InferGetStaticPropsType } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "~/layouts/Layout.astro";
 import Container from "~/components/Container.astro";
-import { Image } from "astro:assets";
 import Carousel from "~/components/Carousel.astro";
 
 export async function getStaticPaths() {
@@ -25,7 +24,6 @@ export async function getStaticPaths() {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { lang, slug } = Astro.params;
 const { description, name, generation, flavor, mark, images, socialMedia } = Astro.props.data;
 ---
 
@@ -33,9 +31,8 @@ const { description, name, generation, flavor, mark, images, socialMedia } = Ast
     <Container extraClasses="items-center justify-center">
         <div class="w-full flex flex-row max-sm:flex-col justify-between gap-6">
             <div class="md:max-w-[40%] w-full h-full">
-                <Carousel images={[`/image/profile/${Astro.props.id.split("/")[1]}.webp`, ...images]} />
+                <Carousel images={[`/image/profile/${Astro.props.id.split("/")[1]}.webp`, ...images].filter(i => i.length !== 0)} />
             </div>
-            <!-- <Image class="rounded-lg md:max-w-[40%] w-full h-full" src={`/image/profile/${Astro.props.id.split("/")[1]}.webp`} alt={name} height={400} width={400} /> -->
             <div class="w-full h-full">
                 <h1 class="text-4xl font-bold mb-2">{name}</h1>
                 <p class="">{description}</p>
