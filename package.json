@@ -10,6 +10,7 @@
     "postinstall": "paraglide-js compile --project ./project.inlang"
   },
   "dependencies": {
+    "@astrojs/mdx": "^3.1.7",
     "@astrojs/svelte": "5.7.1",
     "@astrojs/tailwind": "5.1.1",
     "@iconify-json/circle-flags": "^1.1.47",
