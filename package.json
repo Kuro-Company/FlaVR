@@ -23,6 +23,7 @@
     "astro-icon": "^1.1.0",
     "embla-carousel": "^8.1.5",
     "eslint-plugin-svelte": "^2.39.4",
+    "fluid-tailwind": "^1.0.3",
     "gsap": "^3.12.5",
     "lite-youtube-embed": "^0.3.2",
     "nanostores": "^0.10.3",

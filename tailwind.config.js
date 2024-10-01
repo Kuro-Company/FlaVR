@@ -1,10 +1,16 @@
 import typography from "@tailwindcss/typography";
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
 
 /** @type {import("tailwindcss").Config} */
 export default {
-    content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+    content: {
+        files: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+        extract,
+    },
     darkMode: "selector",
     theme: {
+        screens,
+        fontSize,
         extend: {
             colors: {
                 rosePine: {
@@ -99,6 +105,7 @@ export default {
         },
     },
     plugins: [
+        fluid,
         typography,
     ],
 };
