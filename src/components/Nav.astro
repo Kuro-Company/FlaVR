@@ -15,8 +15,8 @@ const locale = Astro.currentLocale ?? "en";
 
     const elem = document.querySelector("#nav-header");
     const classes = [
-        "bg-rosePineDawn-surface/75",
-        "dark:bg-rosePineMoon-surface/75",
+        "bg-rose-pine-dawn-surface/75",
+        "dark:bg-rose-pine-moon-surface/75",
         "backdrop-blur-md",
     ];
     const toggleClasses = () => classes.forEach(c => elem?.classList.toggle(c));
@@ -34,7 +34,7 @@ const locale = Astro.currentLocale ?? "en";
 </script>
 
 {/* temporary */}
-<div class="w-full text-center py-2 px-8 bg-rosePineDawn-highlightLow dark:bg-rosePineMoon-highlightLow border-b-[1px] border-b-rosePineDawn-highlightMed dark:border-b-rosePineMoon-highlightMed">🚧 please excuse the jank, this site under construction 🚧</div>
+<div class="w-full text-center py-2 px-8 bg-rose-pine-dawn-highlight-low dark:bg-rose-pine-moon-highlight-low border-b-[1px] border-b-rose-pine-dawn-highlight-med dark:border-b-rose-pine-moon-highlight-med">🚧 please excuse the jank, this site under construction 🚧</div>
 
 <header class="sticky top-0 z-50 w-full">
     {/* The extremely cursed segments in the class is to show and hide the 2 icons in the mobile menu toggle. */}
@@ -50,7 +50,7 @@ const locale = Astro.currentLocale ?? "en";
 
         {/* Mobile menu toggle */}
         <div class="flex md:hidden">
-            <label for="mobile-menu" class="cursor-pointer -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 hover:bg-rosePineDawn-highlightMed dark:hover:bg-rosePineMoon-highlightMed text-rosePineDawn-text dark:text-rosePineMoon-text">
+            <label for="mobile-menu" class="cursor-pointer -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 hover:bg-rose-pine-dawn-highlight-med dark:hover:bg-rose-pine-moon-highlight-med text-rose-pine-dawn-text dark:text-rose-pine-moon-text">
                 <span class="sr-only">Open menu</span>
                 <Icon name="tabler:menu-2" class="nav-icon" />
                 <Icon name="tabler:x" class="hidden nav-x" />
@@ -66,17 +66,17 @@ const locale = Astro.currentLocale ?? "en";
         </div>
 
         <div class="hidden md:flex md:flex-1 md:justify-end">
-            <NavButton extraClasses="bg-rosePineDawn-highlightLow dark:bg-rosePineMoon-highlightLow" href={getRelativeLocaleUrl(locale, "schedule")}>{m.watch()}</NavButton>
+            <NavButton extraClasses="bg-rose-pine-dawn-highlight-low dark:bg-rose-pine-moon-highlight-low" href={getRelativeLocaleUrl(locale, "schedule")}>{m.watch()}</NavButton>
         </div>
     </nav>
 
     {/* Mobile menu */}
-    <div class="invisible opacity-0 max-md:peer-checked/nav:visible max-md:peer-checked/nav:opacity-100 block absolute transform translate-y-full bottom-full transition-[visibility,opacity] ease-in-out duration-500 -z-10 w-full h-screen overflow-y-auto bg-rosePineDawn-surface/75 dark:bg-rosePineMoon-surface/75 backdrop-blur-md py-4 px-8">
+    <div class="invisible opacity-0 max-md:peer-checked/nav:visible max-md:peer-checked/nav:opacity-100 block absolute transform translate-y-full bottom-full transition-[visibility,opacity] ease-in-out duration-500 -z-10 w-full h-screen overflow-y-auto bg-rose-pine-dawn-surface/75 dark:bg-rose-pine-moon-surface/75 backdrop-blur-md py-4 px-8">
         <div class="flex flex-col gap-4 mt-20">
-            <NavButton extraClasses="!text-3xl !font-bold" href={getRelativeLocaleUrl(locale, "about")}>{m.about()}</NavButton>
-            <NavButton extraClasses="!text-3xl !font-bold" href={getRelativeLocaleUrl(locale, "talents")}>{m.talents()}</NavButton>
-            <NavButton extraClasses="!text-3xl !font-bold" href={getRelativeLocaleUrl(locale, "community")}>{m.community()}</NavButton>
-            <NavButton extraClasses="!text-3xl !font-bold" href={getRelativeLocaleUrl(locale, "news")}>{m.news()}</NavButton>    
+            <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "about")}>{m.about()}</NavButton>
+            <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "talents")}>{m.talents()}</NavButton>
+            <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "community")}>{m.community()}</NavButton>
+            <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "news")}>{m.news()}</NavButton>    
         </div>
     </div>
 </header>

@@ -37,7 +37,7 @@ const { Content } = await page.render();
                 <h1 class="mb-2 text-4xl lg:text-6xl font-bold">{page.data.title}</h1>
                 <p class="lg:text-lg">Last updated on <span class="font-bold">{updatedDate}</span>.</p>
             </div>
-            <div class="prose max-sm:prose-sm max-w-none !text-rosePineDawn-text dark:!text-rosePineMoon-text">
+            <div class="prose max-sm:prose-sm max-w-none text-rose-pine-dawn-text! dark:text-rose-pine-moon-text!">
                 <Content />
             </div>
         </article>

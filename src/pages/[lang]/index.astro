@@ -19,7 +19,7 @@ export const getStaticPaths = getLangStaticPaths;
 </script>
 
 <Layout title={m.home()}>
-    <Container extraClasses="!p-0">
+    <Container extraClasses="p-0!">
         <div class="h-screen w-full bg-[radial-gradient(ellipse,rgba(250,244,237,0.95)_10%,rgba(250,244,237,0.45)),url('/bg.svg')] dark:bg-[radial-gradient(ellipse,rgba(35,33,54,0.95)_10%,rgba(35,33,54,0.45)),url('/bg.svg')] [background-size:100%]">
             <div class="flex flex-col justify-center items-center h-screen">
                 <p class="text-4xl max-sm:text-2xl text-center font-bold italic">{m.tagline()}</p>

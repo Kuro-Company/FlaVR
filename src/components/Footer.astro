@@ -12,10 +12,10 @@ const year = new Date().getFullYear();
 const locale = Astro.currentLocale ?? "en";
 ---
 
-<footer class="flex flex-col py-5 px-8 border-t-[1px] border-t-rosePineDawn-highlightMed dark:border-t-rosePineMoon-highlightMed">
+<footer class="flex flex-col py-5 px-8 border-t-[1px] border-t-rose-pine-dawn-highlight-med dark:border-t-rose-pine-moon-highlight-med">
     <div class="flex flex-col sm:flex-row items-center sm:justify-between">
         <img class="max-w-72 dark:invert" src="/kuro_company.svg" alt="Kuro Company">
-        <div class="sm:self-start flex flex-wrap items-center text-md font-semibold gap-4 text-rosePineDawn-text dark:text-rosePineMoon-text">
+        <div class="sm:self-start flex flex-wrap items-center text-md font-semibold gap-4 text-rose-pine-dawn-text dark:text-rose-pine-moon-text">
             <a href={getRelativeLocaleUrl(locale, "join")} class="hover:underline">{m.joinFlaVR()}</a>
             <a href={getRelativeLocaleUrl(locale, "legal")} class="hover:underline">{m.legal()}</a>
             <a href={getRelativeLocaleUrl(locale, "contact")} class="hover:underline">{m.contact()}</a>
@@ -24,16 +24,16 @@ const locale = Astro.currentLocale ?? "en";
     <div class="flex flex-col sm:flex-row items-center">
         <div class="flex-1 flex flex-row justify-start items-center gap-4">
             <a href="https://github.com/Kuro-Company">
-                <Icon name="github" class="text-rosePineDawn-text dark:text-rosePineMoon-text h-6 w-6" />
+                <Icon name="github" class="text-rose-pine-dawn-text dark:text-rose-pine-moon-text h-6 w-6" />
             </a>
             <a href="https://discord.gg/hk5gemg27x">
-                <Icon name="discord" class="text-rosePineDawn-text dark:text-rosePineMoon-text h-6 w-6" />
+                <Icon name="discord" class="text-rose-pine-dawn-text dark:text-rose-pine-moon-text h-6 w-6" />
             </a>
             <a href="https://twitter.com/Kuro_Company">
-                <Icon name="twitter" class="text-rosePineDawn-text dark:text-rosePineMoon-text h-6 w-6" />
+                <Icon name="twitter" class="text-rose-pine-dawn-text dark:text-rose-pine-moon-text h-6 w-6" />
             </a>
         </div>
-        <p class="flex-1 text-sm text-center font-semibold leading-6 pb-3 sm:pb-0 text-rosePineDawn-text dark:text-rosePineMoon-text">&copy {year} {m.kuroCompany()} {m.allRightsReserved()}</p>
+        <p class="flex-1 text-sm text-center font-semibold leading-6 pb-3 sm:pb-0 text-rose-pine-dawn-text dark:text-rose-pine-moon-text">&copy {year} {m.kuroCompany()} {m.allRightsReserved()}</p>
         <div class="flex-1 flex flex-row justify-end items-center gap-4">
             <DarkModeToggle client:load>
                 <SunIcon slot="sun" />

@@ -1,10 +1,9 @@
 import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
-import tailwind from "@astrojs/tailwind";
+import tailwind from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
 import paraglide from "@inlang/paraglide-js-adapter-astro";
-import { purgeCss } from "vite-plugin-tailwind-purgecss";
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,11 +26,10 @@ export default defineConfig({
     build: {
       sourcemap: true,
     },
-    plugins: [purgeCss()],
+    plugins: [tailwind()],
   },
   integrations: [
     svelte(),
-    tailwind(),
     icon(),
     mdx(),
     paraglide({

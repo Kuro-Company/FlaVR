@@ -21,7 +21,7 @@ const tags = [...new Set(pages.map(({ data }) => data.tags).flat())]
         <ul class="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] auto-rows-1 gap-4">
             {tags.map((tag) => (
                 <li class="h-full min-h-36 relative">
-                    <a class="h-full flex flex-col justify-center rounded-md shadow p-4 cursor-pointer bg-rosePineDawn-surface dark:bg-rosePineMoon-surface hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay" href={`/${Astro.currentLocale ?? "en"}/news/tags/${tag}/`}>
+                    <a class="h-full flex flex-col justify-center rounded-md shadow-sm p-4 cursor-pointer bg-rose-pine-dawn-surface dark:bg-rose-pine-moon-surface hover:bg-rose-pine-dawn-overlay dark:hover:bg-rose-pine-moon-overlay" href={`/${Astro.currentLocale ?? "en"}/news/tags/${tag}/`}>
                         <h3 class="text-3xl text-center font-bold">{tag}</h3>
                     </a>
                 </li>

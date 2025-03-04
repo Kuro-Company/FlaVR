@@ -17,7 +17,7 @@ const { images } = Astro.props;
     next?.addEventListener("click", () => embla.scrollNext(), false);
 </script>
 
-<div class="embla relative overflow-hidden m-auto rounded-xl aspect-square bg-rosePineDawn-highlightLow dark:bg-rosePineMoon-highlightLow">
+<div class="embla relative overflow-hidden m-auto rounded-xl aspect-square bg-rose-pine-dawn-highlight-low dark:bg-rose-pine-moon-highlight-low">
     <div class={`embla__viewport ${images.length > 1 ? "flag__watch-drag" : ""}`}>
         <div class="embla__container [backface-visibility:hidden] flex touch-pan-y">
             {images.map((img) => (
@@ -30,7 +30,7 @@ const { images } = Astro.props;
     {images.length > 1 && (
         <div class="absolute top-0 start-0 z-30 flex items-center justify-center h-full">
             <button type="button" class="embla__prev px-2 cursor-pointer">
-                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-rosePineDawn-overlay/40 dark:bg-rosePineMoon-overlay/35 hover:bg-rosePineDawn-overlay/60 dark:hover:bg-rosePineMoon-overlay/55 active:bg-rosePineDawn-overlay/70 dark:active:bg-rosePineMoon-overlay/70">
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-rose-pine-dawn-overlay/40 dark:bg-rose-pine-moon-overlay/35 hover:bg-rose-pine-dawn-overlay/60 dark:hover:bg-rose-pine-moon-overlay/55 active:bg-rose-pine-dawn-overlay/70 dark:active:bg-rose-pine-moon-overlay/70">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                     </svg>
@@ -40,7 +40,7 @@ const { images } = Astro.props;
         </div>
         <div class="absolute top-0 end-0 z-30 flex items-center justify-center h-full">
             <button type="button" class="embla__next px-2 cursor-pointer">
-                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-rosePineDawn-overlay/40 dark:bg-rosePineMoon-overlay/35 hover:bg-rosePineDawn-overlay/60 dark:hover:bg-rosePineMoon-overlay/55 active:bg-rosePineDawn-overlay/70 dark:active:bg-rosePineMoon-overlay/70">
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-rose-pine-dawn-overlay/40 dark:bg-rose-pine-moon-overlay/35 hover:bg-rose-pine-dawn-overlay/60 dark:hover:bg-rose-pine-moon-overlay/55 active:bg-rose-pine-dawn-overlay/70 dark:active:bg-rose-pine-moon-overlay/70">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                     </svg>

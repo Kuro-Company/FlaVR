@@ -16,14 +16,14 @@ import { availableLanguageTags } from "~/paraglide/runtime";
 </script>
 
 <div class="relative inline-block text-center group/lang-select">
-    <button class="peer h-full cursor-pointer p-2.5 rounded-md bg-rosePineDawn-highlightMed dark:bg-rosePineMoon-highlightMed hover:bg-opacity-80" tabindex="0">
+    <button class="peer h-full cursor-pointer p-2.5 rounded-md bg-rose-pine-dawn-highlight-med dark:bg-rose-pine-moon-highlight-med hover:bg-opacity-80" tabindex="0">
         <Icon size={20} name={`circle-flags:${Astro.currentLocale ?? "en"}`} />
     </button>
-    <div class="z-10 absolute hidden group-focus-within/lang-select:block bottom-12 right-[50%] translate-x-[50%] bg-rosePineDawn-surface dark:bg-rosePineMoon-surface divide-y divide-rosePineDawn-muted dark:divide-rosePineMoon-muted rounded-lg">
+    <div class="z-10 absolute hidden group-focus-within/lang-select:block bottom-12 right-[50%] translate-x-[50%] bg-rose-pine-dawn-surface dark:bg-rose-pine-moon-surface divide-y divide-rose-pine-dawn-muted dark:divide-rose-pine-moon-muted rounded-lg">
         <ul id="langselect" class="py-2 text-sm max-h-32 overflow-y-scroll">
             {availableLanguageTags.map((lang) => 
                 <li>
-                    <a tabindex="0" href={`${getRelativeLocaleUrl(lang)}${Astro.url.pathname.replace(`/${Astro.currentLocale}/`, "")}`} class="block px-2 mx-2 py-2 rounded-lg hover:bg-rosePineDawn-overlay hover:dark:bg-rosePineMoon-overlay">
+                    <a tabindex="0" href={`${getRelativeLocaleUrl(lang)}${Astro.url.pathname.replace(`/${Astro.currentLocale}/`, "")}`} class="block px-2 mx-2 py-2 rounded-lg hover:bg-rose-pine-dawn-overlay dark:hover:bg-rose-pine-moon-overlay">
                         <Icon size={20} name={`circle-flags:${lang}`} />
                     </a>
                 </li>
