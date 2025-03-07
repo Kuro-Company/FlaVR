@@ -8,10 +8,10 @@ export const getStaticPaths = getLangStaticPaths;
 ---
 
 <script>
-    import { gsap } from "gsap";
-    import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
+    // import { gsap } from "gsap";
+    // import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
 
-    gsap.registerPlugin(MotionPathPlugin);
+    // gsap.registerPlugin(MotionPathPlugin);
 
     // gsap.to("#div", {
     // 	motionPath: "#outline_f"
@@ -20,7 +20,16 @@ export const getStaticPaths = getLangStaticPaths;
 
 <Layout title={m.home()}>
     <Container extraClasses="p-0!" noLimit>
-        <div class="h-screen w-full bg-[radial-gradient(ellipse,rgba(250,244,237,0.95)_10%,rgba(250,244,237,0.45)),url('/bg.svg')] dark:bg-[radial-gradient(ellipse,rgba(35,33,54,0.95)_10%,rgba(35,33,54,0.45)),url('/bg.svg')] [background-size:100%]">
+        <div class="absolute left-[50%] top-[50%] translate-[-50%] z-0 overflow-hidden h-screen w-full">
+            <!-- w: (w*cos(a)) + (h*sin(a))
+                 h: (w*sin(a)) + (h*cos(a)) -->
+            <div class="absolute left-[50%] top-[50%] translate-[-50%] h-[calc((100vw*sin(12deg))+(100vh*cos(12deg)))] w-[calc((100vh*sin(12deg))+(100vw*cos(12deg)))] -rotate-12 origin-center">
+                <div class="absolute h-full w-[200%] animate-marquee bg-[url('/bg.svg')] [background-size:1440px,374.4px] bg-repeat"></div>
+                <!-- <div class="absolute h-full w-[200%] animate-marquee bg-[url('/bg-2.svg')] [background-size:1440px,374.4px] bg-repeat"></div> -->
+                <!-- <div class="absolute h-full w-[200%] animate-marquee2 bg-[url('/bg-rev-2.svg')] [background-size:1440px,374.4px] bg-repeat"></div> -->
+            </div>
+        </div>
+        <div class="relative z-10 h-screen w-full bg-[radial-gradient(ellipse,rgba(250,244,237,0.95)_10%,rgba(250,244,237,0.45))] dark:bg-[radial-gradient(ellipse,rgba(35,33,54,0.95)_10%,rgba(35,33,54,0.45))] [background-size:100%]">
             <div class="flex flex-col justify-center items-center h-screen">
                 <p class="text-4xl max-sm:text-2xl text-center font-bold italic">{m.tagline()}</p>
                 <div class="flex flex-row items-center justify-center">
@@ -33,26 +42,28 @@ export const getStaticPaths = getLangStaticPaths;
             </div>
         </div>
     </Container>
-    <!-- <div class="absolute w-full max-w-[97.5vw] h-full top-0 left-0 -z-50 px-2 py-20">
-        <div class="grid grid-flow-row grid-rows-[repeat(auto-fill,minmax(0,1fr))]">
-            <div class="grid grid-flow-col grid-rows-2 gap-4">
-                <div class="[font-size:5vw] text-center pr-[50%]">🍧</div>
-                <div class="[font-size:5vw] text-center pl-[50%]">💊</div>
-                <div class="[font-size:5vw] text-center pr-[50%]">🍷</div>
-                <div class="[font-size:5vw] text-center pl-[50%]">🍒</div>
-                <div class="[font-size:5vw] text-center pr-[50%]">💉</div>
-                <div class="[font-size:5vw] text-center pl-[50%]">🍞</div>
-                <div class="[font-size:5vw] text-center pr-[50%]">🍫</div>
-                <div class="[font-size:5vw] text-center pl-[50%]">🍊</div>
-                <div class="[font-size:5vw] text-center pr-[50%]">🐶</div>
-                <div class="[font-size:5vw] text-center pl-[50%]">🥤</div>
-                <div class="[font-size:5vw] text-center pr-[50%]">🍌</div>
-                <div class="[font-size:5vw] text-center pl-[50%]">🧀</div>
-                <div class="[font-size:5vw] text-center pr-[50%]">🌶️</div>
-                <div class="[font-size:5vw] text-center pl-[50%]">🍇</div>
-                <div class="[font-size:5vw] text-center pr-[50%]">🛠️</div>
-                <div class="[font-size:5vw] text-center pl-[50%]">🦊</div>
-            </div>
+    <!-- <div class="absolute w-full h-[100vh] top-0 left-0 -z-50 px-2 py-20 overflow-hidden">
+        <div class="w-[200%] animate-marquee rotate-12">
+            <div class="grid grid-flow-row grid-rows-[repeat(auto-fill,minmax(0,1fr))]">
+                <div class="grid grid-flow-col grid-rows-2 gap-4">
+                    <div class="text-7xl text-center pr-[50%]">🍧</div>
+                    <div class="text-7xl text-center pl-[50%]">💊</div>
+                    <div class="text-7xl text-center pr-[50%]">🍷</div>
+                    <div class="text-7xl text-center pl-[50%]">🍒</div>
+                    <div class="text-7xl text-center pr-[50%]">💉</div>
+                    <div class="text-7xl text-center pl-[50%]">🍞</div>
+                    <div class="text-7xl text-center pr-[50%]">🍫</div>
+                    <div class="text-7xl text-center pl-[50%]">🍊</div>
+                    <div class="text-7xl text-center pr-[50%]">🐶</div>
+                    <div class="text-7xl text-center pl-[50%]">🥤</div>
+                    <div class="text-7xl text-center pr-[50%]">🍌</div>
+                    <div class="text-7xl text-center pl-[50%]">🧀</div>
+                    <div class="text-7xl text-center pr-[50%]">🌶️</div>
+                    <div class="text-7xl text-center pl-[50%]">🍇</div>
+                    <div class="text-7xl text-center pr-[50%]">🛠️</div>
+                    <div class="text-7xl text-center pl-[50%]">🦊</div>
+                </div>
+            </div>    
         </div>
     </div> -->
 </Layout>
