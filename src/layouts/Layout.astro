@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Nav from "~/components/Nav.astro";
 import Footer from "~/components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
     title: string;
@@ -12,7 +13,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={Astro.locals.paraglide?.lang ?? "en"} dir={Astro.locals.paraglide?.dir}>
+<html lang={Astro.locals.paraglide?.lang ?? "en"} dir={Astro.locals.paraglide?.dir} transition:name="root" transition:animate="none">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content={description ?? "The world's first open source virtual entertaiment circle from Kuro Company."} />
@@ -43,6 +44,7 @@ const { title, description } = Astro.props;
         <script is:inline defer src={import.meta.env.PUBLIC_UMAMI_SRC as string ?? ""} data-website-id={import.meta.env.PUBLIC_UMAMI_SITE as string ?? ""}></script>
         <meta name="generator" content={Astro.generator} />
         <title>FlaVR - {title}</title>
+        <ClientRouter />
     </head>
     <body class="bg-rose-pine-dawn-base dark:bg-rose-pine-moon-base text-rose-pine-dawn-text dark:text-rose-pine-moon-text">
         <Nav />

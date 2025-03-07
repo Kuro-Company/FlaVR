@@ -8,6 +8,7 @@ import paraglide from "@inlang/paraglide-js-adapter-astro";
 // https://astro.build/config
 export default defineConfig({
   trailingSlash: "always",
+  prefetch: true,
   i18n: {
     locales: ["en", "es", "ja"],
     defaultLocale: "en",
