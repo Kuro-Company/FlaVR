@@ -16,13 +16,13 @@
 
 <div class="flex flex-row justify-end h-full">
     <div class="inline-flex flex-row" role="group">
-        <DarkModeToggleButton id="sun" name="dmselect" left active={$theme === "light"} on:click={() => theme.set("light")}>
+        <DarkModeToggleButton id="sun" name="dmselect" left active={$theme === "light"} onclick={() => theme.set("light")}>
             <slot name="sun" />
         </DarkModeToggleButton>
-        <DarkModeToggleButton id="device" name="dmselect" active={$theme === "device"} on:click={() => theme.set("device")}>
+        <DarkModeToggleButton id="device" name="dmselect" active={$theme === "device"} onclick={() => theme.set("device")}>
             <slot name="device" />
         </DarkModeToggleButton>
-        <DarkModeToggleButton id="moon" name="dmselect" right active={$theme === "dark"} on:click={() => theme.set("dark")}>
+        <DarkModeToggleButton id="moon" name="dmselect" right active={$theme === "dark"} onclick={() => theme.set("dark")}>
             <slot name="moon" />
         </DarkModeToggleButton>
     </div>

@@ -1,17 +1,26 @@
 <script lang="ts">
-    export let id: string;
-    export let name: string;
-    export let right: boolean | undefined = undefined;
-    export let left: boolean | undefined = undefined;
-    export let active: boolean | undefined = undefined;
-
-    import { createEventDispatcher } from "svelte";
-
-    const dispatch = createEventDispatcher();
+    let { 
+        id,
+        name,
+        right,
+        left,
+        active,
+        onclick,
+    }: {
+        id: string,
+        name: string,
+        right?: boolean,
+        left?: boolean,
+        active?: boolean,
+        onclick: () => void,
+    } = $props();
 </script>
 
-<!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role a11y-role-has-required-aria-props -->
+<!-- svelte-ignore a11y_no_noninteractive_element_to_interactive_role -->
+<!-- svelte-ignore a11y_role_has_required_aria_props -->
+<!-- svelte-ignore a11y_no_noninteractive_element_to_interactive_role -->
+<!-- svelte-ignore slot_element_deprecated -->
 <label role="radio" for={id} class={`flex items-center h-full cursor-pointer p-3 bg-rose-pine-dawn-highlight-med dark:bg-rose-pine-moon-highlight-med hover:bg-opacity-80" ${(right ? "rounded-r-md" : "")} ${(left ? "rounded-l-md" : "")} ${active ? " bg-rose-pine-dawn-highlight-high! dark:bg-rose-pine-moon-highlight-high!" : ""}`}>
-    <input id={id} name={name} type="radio" class="hidden border-hidden" checked={active} on:click={() => dispatch("click")}>
+    <input id={id} name={name} type="radio" class="hidden border-hidden" checked={active} {onclick}>
     <slot />
 </label>
