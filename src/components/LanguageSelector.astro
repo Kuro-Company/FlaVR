@@ -16,7 +16,7 @@ import { availableLanguageTags } from "~/paraglide/runtime";
 </script>
 
 <div class="relative inline-block text-center group/lang-select">
-    <button class="peer h-full cursor-pointer p-2.5 rounded-md bg-rose-pine-dawn-highlight-med dark:bg-rose-pine-moon-highlight-med hover:bg-opacity-80" tabindex="0">
+    <button class="peer h-full cursor-pointer p-2.5 rounded-sm bg-rose-pine-dawn-highlight-med dark:bg-rose-pine-moon-highlight-med hover:bg-opacity-80" tabindex="0">
         <Icon size={20} name={`circle-flags:${Astro.currentLocale ?? "en"}`} />
     </button>
     <div class="z-10 absolute hidden group-focus-within/lang-select:block bottom-12 right-[50%] translate-x-[50%] bg-rose-pine-dawn-surface dark:bg-rose-pine-moon-surface divide-y divide-rose-pine-dawn-muted dark:divide-rose-pine-moon-muted rounded-lg">
