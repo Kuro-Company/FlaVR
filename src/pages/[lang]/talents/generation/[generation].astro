@@ -1,0 +1,48 @@
+---
+import * as m from "~/paraglide/messages.js";
+import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { InferGetStaticPropsType } from "astro";
+import TalentsItem from "~/components/TalentsItem.astro";
+
+
+export async function getStaticPaths() {
+    const data = await getCollection("talents");
+
+    const langs = data.map(({ id }) => id.split("/")[0]);
+
+    const generations = langs.map((lang) => {
+        const talents = data.filter(({ id }) => id.split("/")[0] === lang);
+        return [...new Set(talents.map(({ data }) => data.generation).flat())]
+            .map(generation => ({ generation, lang, talents: talents.filter(({ data }) => data.generation === generation) }));
+    }).flat();
+
+    return generations.map(({ generation, lang, talents }) => {
+        return {
+            params: {
+                lang,
+                generation: generation.toLowerCase(),
+            },
+            props: {
+                talents,
+                generation
+            },
+        };
+    });
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { generation, talents } = Astro.props;
+---
+
+<Layout title={`${m.talents()} - ${generation}`}>
+    <Container>
+        <h1 class="text-5xl font-bold mb-8">{generation}</h1>
+        <ul class="grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] gap-4">
+            {talents.map(({ id, data }) =>  <TalentsItem url={getRelativeLocaleUrl(Astro.currentLocale ?? "en", `talents/${id.split("/")[1]}`)} name={data.name} image={id.split("/")[1]} />)}
+        </ul>
+    </Container>
+</Layout>

@@ -23,8 +23,9 @@ import { availableLanguageTags } from "~/paraglide/runtime";
         <ul id="langselect" class="py-2 text-sm max-h-32 overflow-y-scroll">
             {availableLanguageTags.map((lang) => 
                 <li>
-                    <a tabindex="0" href={`${getRelativeLocaleUrl(lang)}${Astro.url.pathname.replace(`/${Astro.currentLocale}/`, "")}`} class="block px-2 mx-2 py-2 rounded-lg hover:bg-rose-pine-dawn-overlay dark:hover:bg-rose-pine-moon-overlay">
+                    <a tabindex="0" href={`${getRelativeLocaleUrl(lang)}${Astro.url.pathname.replace(`/${Astro.currentLocale}/`, "")}`} class="flex flex-row gap-2 items-center px-2 mx-2 py-2 rounded-lg hover:bg-rose-pine-dawn-overlay dark:hover:bg-rose-pine-moon-overlay">
                         <Icon size={20} name={`circle-flags:${lang}`} />
+                        {new Intl.DisplayNames(lang, { type: "language" }).of(lang)}
                     </a>
                 </li>
             )}

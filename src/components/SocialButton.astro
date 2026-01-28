@@ -13,7 +13,7 @@ const link = (icon === "youtube" && "https://www.youtube.com/channel/") || (icon
 const name = (icon === "youtube" && "YouTube") || (icon === "twitter" && "Twitter") || (icon === "twitch" && "Twitch");
 ---
 
-<a href={link + href} class={`cursor-pointer text-md text-center inline-flex items-center justify-center space-x-2 font-semibold leading-6 p-4 sm:py-2 sm:px-3 rounded-md bg-rose-pine-dawn-highlight-low dark:bg-rose-pine-moon-highlight-low hover:bg-rose-pine-dawn-highlight-med dark:hover:bg-rose-pine-moon-highlight-med text-rose-pine-dawn-text dark:text-rose-pine-moon-text ${extraClasses}`}>
+<a href={link + href} class={`cursor-pointer text-md text-center inline-flex items-center justify-center gap-2 font-semibold leading-6 p-4 sm:py-2 sm:px-3 rounded-md bg-rose-pine-dawn-highlight-low dark:bg-rose-pine-moon-highlight-low hover:bg-rose-pine-dawn-highlight-med dark:hover:bg-rose-pine-moon-highlight-med text-rose-pine-dawn-text dark:text-rose-pine-moon-text ${extraClasses}`}>
     <Icon name={icon} class="text-rose-pine-dawn-text dark:text-rose-pine-moon-text h-7 w-7 sm:h-5 sm:w-5" />
     <span class="mb-0.5 hidden sm:block">{name}</span>
     <Icon name="link" class="text-rose-pine-dawn-text dark:text-rose-pine-moon-text h-6 w-6 hidden sm:block" />

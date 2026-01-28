@@ -25,16 +25,18 @@ export async function getStaticPaths() {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
+const { lang } = Astro.params;
 const { description, name, generation, flavor, mark, images, socialMedia } = Astro.props.data;
 ---
 
 <Layout title={name}>
     <Container extraClasses="items-center justify-center">
         <div class="w-full flex flex-row max-sm:flex-col justify-between gap-6">
-            <div class="md:max-w-[40%] w-full h-full">
+            <div class="md:max-w-[40%] w-full h-full pt-2">
                 <Carousel images={[`/image/profile/${Astro.props.id.split("/")[1]}.webp`, ...images].filter(i => i.length !== 0)} />
             </div>
             <div class="w-full h-full space-y-4">
+                <a class="font-semibold hover:text-rose-pine-dawn-subtle hover:underline underline-offset-2" href={`/${lang}/talents/generation/${generation.toLowerCase()}/`}>FlaVR {generation}</a>
                 <h1 class="text-4xl sm:text-5xl font-bold">{name}</h1>
                 <div class="flex flex-row flex-wrap gap-2">
                     {Object.entries(socialMedia).filter(([, v]) => v.length !== 0).map(([k, v]) => {

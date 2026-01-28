@@ -34,6 +34,7 @@ const locale = Astro.currentLocale ?? "en";
             </div>
         </div>
         <div class="flex flex-row justify-end items-center gap-4 max-md:mt-4">
+            {/* @ts-expect-error slot types bewteen svelte and astro are fucked */}
             <DarkModeToggle client:load>
                 <SunIcon slot="sun" />
                 <DeviceIcon slot="device" />

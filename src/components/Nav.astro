@@ -40,7 +40,7 @@ const locale = Astro.currentLocale ?? "en";
     {/* The extremely cursed segments in the class is to show and hide the 2 icons in the mobile menu toggle. */}
     <input type="checkbox" id="mobile-menu" class="peer/nav hidden [&:checked~#nav-header**.nav-icon]:hidden [&:checked~#nav-header**.nav-x]:block">
 
-    <nav id="nav-header" class="z-50 flex w-full items-center justify-between max-md:py-6 max-md:mt-0 my-4 max-md:px-8 max-md:opacity-75 max-md:bg-rose-pine-dawn-surface max-md:dark:bg-rose-pine-moon-surface max-md:backdrop-blur-md">
+    <nav id="nav-header" class="mx-auto z-50 flex w-full items-center justify-between max-md:py-6 max-md:mt-0 my-4 md:my-6 max-md:px-8 max-md:opacity-75 max-md:bg-rose-pine-dawn-surface max-md:dark:bg-rose-pine-moon-surface max-md:backdrop-blur-md">
         <div class="flex md:hidden">
             <a href={getRelativeLocaleUrl(locale)} class="-m-1.5 p-1.5">
                 <span class="sr-only">FlaVR</span>
@@ -60,7 +60,7 @@ const locale = Astro.currentLocale ?? "en";
         <div class="max-md:hidden flex-1 self-stretch mr-2 overflow-x-hidden relative max-md:before:invisible before:-z-10 before:bg-rose-pine-dawn-highlight-low dark:before:bg-rose-pine-moon-highlight-low before:absolute before:top-0 before:-left-2 before:w-full before:h-full before:-skew-x-20"></div>
 
         {/* Wide nav */}
-        <div class="hidden md:flex md:flex-1 md:justify-center md:items-center md:gap-x-1 max-w-240 w-full">
+        <div class="hidden md:flex md:flex-1 md:justify-center md:items-center md:gap-x-1 w-full">
             <div class="max-md:hidden w-full self-stretch max-w-6"></div>
             <a href={getRelativeLocaleUrl(locale)} class="-m-1.5 p-1.5 pr-0 h-full">
                 <span class="sr-only">FlaVR</span>
@@ -79,12 +79,13 @@ const locale = Astro.currentLocale ?? "en";
     </nav>
 
     {/* Mobile menu */}
-    <div class="invisible opacity-0 max-md:peer-checked/nav:visible max-md:peer-checked/nav:opacity-100 block absolute transform translate-y-full bottom-full transition-[visibility,opacity] ease-in-out duration-500 -z-10 w-full h-screen overflow-y-auto bg-rose-pine-dawn-surface/75 dark:bg-rose-pine-moon-surface/75 backdrop-blur-md py-4 px-8">
+    <div class="invisible opacity-0 max-md:peer-checked/nav:visible max-md:peer-checked/nav:opacity-100 block absolute transform translate-y-full bottom-full transition-[visibility,opacity] ease-in-out duration-500 -z-10 w-full h-screen overflow-y-auto bg-rose-pine-dawn-surface/75 dark:bg-rose-pine-moon-surface/75 backdrop-blur-md max-sm:py-4 max-sm:px-8">
         <div class="flex flex-col gap-4 mt-20">
             <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "about")}>{m.about()}</NavButton>
             <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "talents")}>{m.talents()}</NavButton>
-            <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "community")}>{m.community()}</NavButton>
-            <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "news")}>{m.news()}</NavButton>    
+            <!-- <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "community")}>{m.community()}</NavButton> -->
+            <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "news")}>{m.news()}</NavButton>
+            <NavButton extraClasses="text-3xl! font-bold!" href={getRelativeLocaleUrl(locale, "schedule")}>{m.watch()}</NavButton>
         </div>
     </div>
 </header>
