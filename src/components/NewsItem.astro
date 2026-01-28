@@ -14,7 +14,7 @@ const { url, title, description, date, tags, image } = Astro.props;
 ---
 <li class="h-full relative min-h-36 group/newsitem">
     <a class="absolute top-0 left-0 bottom-0 right-0" href={url}></a>
-    <span class="h-full flex flex-col relative pointer-events-none z-10 rounded-md shadow-sm p-4 cursor-pointer bg-rose-pine-dawn-surface dark:bg-rose-pine-moon-surface group-hover/newsitem:bg-rose-pine-dawn-overlay dark:group-hover/newsitem:bg-rose-pine-moon-overlay">
+    <span class="h-full flex flex-col relative pointer-events-none z-10 shadow-sm p-4 cursor-pointer bg-rose-pine-dawn-surface dark:bg-rose-pine-moon-surface group-hover/newsitem:bg-rose-pine-dawn-overlay dark:group-hover/newsitem:bg-rose-pine-moon-overlay">
         <p class="text-xs text-rose-pine-dawn-text/90 dark:text-rose-pine-moon-text/90">{date.toLocaleString(Astro.currentLocale, { dateStyle: "long" })}</p>
         <h3 class="text-2xl font-bold">{title}</h3>
         <p class="mb-4 text-rose-pine-dawn-text/90 dark:text-rose-pine-moon-text/90">{description}</p>

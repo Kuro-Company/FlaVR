@@ -17,9 +17,9 @@ const locale = Astro.currentLocale ?? "en";
         <div class="flex flex-col max-md:items-center md:justify-center max-w-fit">
             <img class="max-w-72 dark:invert" src="/kuro_company.svg" alt="Kuro Company">
             <div class="sm:self-start flex flex-wrap items-center text-md font-semibold gap-4 text-rose-pine-dawn-text dark:text-rose-pine-moon-text">
-                <a href={getRelativeLocaleUrl(locale, "join")} class="hover:underline">{m.joinFlaVR()}</a>
-                <a href={getRelativeLocaleUrl(locale, "legal")} class="hover:underline">{m.legal()}</a>
-                <a href={getRelativeLocaleUrl(locale, "contact")} class="hover:underline">{m.contact()}</a>
+                <a href={getRelativeLocaleUrl(locale, "join")} class="hover:underline decoration-[1.5px]">{m.joinFlaVR()}</a>
+                <a href={getRelativeLocaleUrl(locale, "legal")} class="hover:underline decoration-[1.5px]">{m.legal()}</a>
+                <a href={getRelativeLocaleUrl(locale, "contact")} class="hover:underline decoration-[1.5px]">{m.contact()}</a>
             </div>
             <div class="flex flex-row justify-start items-center gap-4 mt-2">
                 <a href="https://github.com/Kuro-Company">
