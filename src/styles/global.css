@@ -1,5 +1,12 @@
 @import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
 /* @plugin "fluid-tailwind"; */
+
+@import "./rose-pine-dawn.css";
+@import "./rose-pine-moon.css";
+@import "./rose-pine-pine.css";
+@import "./animation.css";
 
 @config "../../tailwind.config.js";
 

@@ -1,0 +1,17 @@
+@theme {
+    --color-rose-pine-moon-base: hsl(246deg, 24%, 17%);
+    --color-rose-pine-moon-surface: hsl(248deg, 24%, 20%);
+    --color-rose-pine-moon-overlay: hsl(248deg, 21%, 26%);
+    --color-rose-pine-moon-muted: hsl(249deg, 12%, 47%);
+    --color-rose-pine-moon-subtle: hsl(248deg, 15%, 61%);
+    --color-rose-pine-moon-text: hsl(245deg, 50%, 91%);
+    --color-rose-pine-moon-love: hsl(343deg, 76%, 68%);
+    --color-rose-pine-moon-gold: hsl(35deg, 88%, 72%);
+    --color-rose-pine-moon-rose: hsl(2deg, 66%, 75%);
+    --color-rose-pine-moon-pine: hsl(197deg, 48%, 47%);
+    --color-rose-pine-moon-foam: hsl(189deg, 43%, 73%);
+    --color-rose-pine-moon-iris: hsl(267deg, 57%, 78%);
+    --color-rose-pine-moon-highlight-low: hsl(245deg, 22%, 20%);
+    --color-rose-pine-moon-highlight-med: hsl(247deg, 16%, 30%);
+    --color-rose-pine-moon-highlight-high: hsl(249deg, 15%, 38%);
+}

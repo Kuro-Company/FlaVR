@@ -1,0 +1,23 @@
+@theme {
+    --animate-marquee: marquee 180s linear infinite;
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    --animate-marquee2: marquee2 180s linear infinite;
+
+    @keyframes marquee2 {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+}

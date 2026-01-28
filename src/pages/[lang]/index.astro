@@ -24,17 +24,17 @@ export const getStaticPaths = getLangStaticPaths;
             <!-- w: (w*cos(a)) + (h*sin(a))
                  h: (w*sin(a)) + (h*cos(a)) -->
             <div class="absolute left-[50%] top-[50%] translate-[-50%] h-[calc((100vw*sin(12deg))+(100vh*cos(12deg)))] w-[calc((100vh*sin(12deg))+(100vw*cos(12deg)))] -rotate-12 origin-center">
-                <div class="absolute h-full w-[200%] animate-marquee bg-[url('/bg.svg')] [background-size:1440px,374.4px] bg-repeat"></div>
-                <!-- <div class="absolute h-full w-[200%] animate-marquee bg-[url('/bg-2.svg')] [background-size:1440px,374.4px] bg-repeat"></div> -->
-                <!-- <div class="absolute h-full w-[200%] animate-marquee2 bg-[url('/bg-rev-2.svg')] [background-size:1440px,374.4px] bg-repeat"></div> -->
+                <div class="absolute h-full w-[200%] animate-marquee bg-[url('/bg.svg')] bg-size-[1440px,374.4px] bg-repeat"></div>
+                <!-- <div class="absolute h-full w-[200%] animate-marquee bg-[url('/bg-2.svg')] bg-size-[1440px,374.4px] bg-repeat"></div> -->
+                <!-- <div class="absolute h-full w-[200%] animate-marquee2 bg-[url('/bg-rev-2.svg')] bg-size-[1440px,374.4px] bg-repeat"></div> -->
             </div>
         </div>
-        <div class="relative z-10 h-screen w-full bg-[radial-gradient(ellipse,rgba(250,244,237,0.95)_10%,rgba(250,244,237,0.45))] dark:bg-[radial-gradient(ellipse,rgba(35,33,54,0.95)_10%,rgba(35,33,54,0.45))] [background-size:100%]">
+        <div class="relative z-10 h-screen w-full bg-[radial-gradient(ellipse,rgba(250,244,237,0.95)_10%,rgba(250,244,237,0.45))] dark:bg-[radial-gradient(ellipse,rgba(35,33,54,0.95)_10%,rgba(35,33,54,0.45))] bg-size-[100%]">
             <div class="flex flex-col justify-center items-center h-screen">
                 <p class="text-4xl max-sm:text-2xl text-center font-bold italic">{m.tagline()}</p>
                 <div class="flex flex-row items-center justify-center">
                     <p class="text-8xl max-sm:text-6xl text-center font-bold mr-6">{m.tryFlavr()}</p>
-                    <div class="-m-1.5 p-1.5 max-sm:h-[3.5rem] h-[5.5rem]">
+                    <div class="-m-1.5 p-1.5 max-sm:h-14 h-22">
                         <span class="sr-only">FlaVR</span>
                         <img src="/logo.svg" alt="" class="h-full w-full">
                     </div>
@@ -42,7 +42,7 @@ export const getStaticPaths = getLangStaticPaths;
             </div>
         </div>
     </Container>
-    <!-- <div class="absolute w-full h-[100vh] top-0 left-0 -z-50 px-2 py-20 overflow-hidden">
+    <!-- <div class="absolute w-full h-screen top-0 left-0 -z-50 px-2 py-20 overflow-hidden">
         <div class="w-[200%] animate-marquee rotate-12">
             <div class="grid grid-flow-row grid-rows-[repeat(auto-fill,minmax(0,1fr))]">
                 <div class="grid grid-flow-col grid-rows-2 gap-4">

@@ -7,6 +7,6 @@ interface Props {
 const { extraClasses, noLimit } = Astro.props;
 ---
 
-<div class={`-mt-[4.5em] pt-[4.5em] px-8 pb-8 flex flex-col text-rose-pine-dawn-text dark:text-rose-pine-moon-text ${!noLimit ? "md:max-w-[60rem] mx-auto" : ""} ${extraClasses ?? ""}`}>
+<div class={`-mt-[4.5em] pt-[4.5em] px-8 pb-8 flex flex-col text-rose-pine-dawn-text dark:text-rose-pine-moon-text ${!noLimit ? "md:max-w-240 mx-auto" : ""} ${extraClasses ?? ""}`}>
     <slot />
 </div>

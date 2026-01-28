@@ -7,6 +7,6 @@ interface Props {
 const { href, extraClasses } = Astro.props;
 ---
 
-<a href={href} class={`cursor-pointer text-md font-semibold leading-6 py-2 px-3 md:px-6 rounded-xs relative max-md:before:invisible before:-z-10 hover:before:bg-rose-pine-dawn-highlight-low dark:hover:before:bg-rose-pine-moon-highlight-low before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-skew-x-[20deg] before:bg-rose-pine-dawn-highlight-med dark:before:bg-rose-pine-moon-highlight-med text-rose-pine-dawn-text dark:text-rose-pine-moon-text ${extraClasses}`}>
+<a href={href} class={`cursor-pointer text-md font-semibold leading-6 py-2 px-3 md:px-6 rounded-xs relative max-md:before:invisible before:-z-10 hover:before:bg-rose-pine-dawn-highlight-low dark:hover:before:bg-rose-pine-moon-highlight-low before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-skew-x-20 before:bg-rose-pine-dawn-highlight-med dark:before:bg-rose-pine-moon-highlight-med text-rose-pine-dawn-text dark:text-rose-pine-moon-text ${extraClasses}`}>
     <slot />
 </a>

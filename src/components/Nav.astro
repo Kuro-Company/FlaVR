@@ -34,11 +34,11 @@ const locale = Astro.currentLocale ?? "en";
 </script> -->
 
 {/* temporary */}
-<!-- <div class="w-full text-center py-2 px-8 bg-rose-pine-dawn-highlight-low dark:bg-rose-pine-moon-highlight-low border-b-[1px] border-b-rose-pine-dawn-highlight-med dark:border-b-rose-pine-moon-highlight-med">🚧 please excuse the jank, this site under construction 🚧</div> -->
+<!-- <div class="w-full text-center py-2 px-8 bg-rose-pine-dawn-highlight-low dark:bg-rose-pine-moon-highlight-low border-b border-b-rose-pine-dawn-highlight-med dark:border-b-rose-pine-moon-highlight-med">🚧 please excuse the jank, this site under construction 🚧</div> -->
 
 <header class="max-md:sticky md:flex top-0 z-50 w-full">
     {/* The extremely cursed segments in the class is to show and hide the 2 icons in the mobile menu toggle. */}
-    <input type="checkbox" id="mobile-menu" class="peer/nav hidden [&:checked~#nav-header_*_*_.nav-icon]:hidden [&:checked~#nav-header_*_*_.nav-x]:block">
+    <input type="checkbox" id="mobile-menu" class="peer/nav hidden [&:checked~#nav-header**.nav-icon]:hidden [&:checked~#nav-header**.nav-x]:block">
 
     <nav id="nav-header" class="z-50 flex w-full items-center justify-between max-md:py-6 max-md:mt-0 my-4 max-md:px-8 max-md:opacity-75 max-md:bg-rose-pine-dawn-surface max-md:dark:bg-rose-pine-moon-surface max-md:backdrop-blur-md">
         <div class="flex md:hidden">
@@ -57,17 +57,17 @@ const locale = Astro.currentLocale ?? "en";
             </label>
         </div>
 
-        <div class="max-md:hidden flex-1 self-stretch mr-2 overflow-x-hidden relative max-md:before:invisible before:-z-10 before:bg-rose-pine-dawn-highlight-low dark:before:bg-rose-pine-moon-highlight-low before:absolute before:top-0 before:-left-2 before:w-full before:h-full before:-skew-x-[20deg]"></div>
+        <div class="max-md:hidden flex-1 self-stretch mr-2 overflow-x-hidden relative max-md:before:invisible before:-z-10 before:bg-rose-pine-dawn-highlight-low dark:before:bg-rose-pine-moon-highlight-low before:absolute before:top-0 before:-left-2 before:w-full before:h-full before:-skew-x-20"></div>
 
         {/* Wide nav */}
-        <div class="hidden md:flex md:flex-1 md:justify-center md:items-center md:gap-x-1 max-w-[60rem] w-full">
+        <div class="hidden md:flex md:flex-1 md:justify-center md:items-center md:gap-x-1 max-w-240 w-full">
             <div class="max-md:hidden w-full self-stretch max-w-6"></div>
             <a href={getRelativeLocaleUrl(locale)} class="-m-1.5 p-1.5 pr-0 h-full">
                 <span class="sr-only">FlaVR</span>
                 <img src="/logo.svg" alt="" class="max-h-10 w-auto max-w-max mr-4" />
             </a>
             <div class="max-md:hidden w-full self-stretch max-w-6"></div>
-            <div class="max-md:hidden w-full self-stretch relative before:-z-10 before:bg-rose-pine-dawn-highlight-low dark:before:bg-rose-pine-moon-highlight-low before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-skew-x-[20deg]"></div>
+            <div class="max-md:hidden w-full self-stretch relative before:-z-10 before:bg-rose-pine-dawn-highlight-low dark:before:bg-rose-pine-moon-highlight-low before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-skew-x-20"></div>
             <NavButton href={getRelativeLocaleUrl(locale, "about")}>{m.about()}</NavButton>
             <NavButton href={getRelativeLocaleUrl(locale, "talents")}>{m.talents()}</NavButton>
             <!-- <NavButton href={getRelativeLocaleUrl(locale, "community")}>{m.community()}</NavButton> -->
@@ -75,7 +75,7 @@ const locale = Astro.currentLocale ?? "en";
             <NavButton href={getRelativeLocaleUrl(locale, "schedule")}>{m.watch()}</NavButton>
         </div>
 
-        <div class="max-md:hidden flex-1 self-stretch -ml-1 overflow-x-hidden relative max-md:before:invisible before:-z-10 before:bg-rose-pine-dawn-highlight-low dark:before:bg-rose-pine-moon-highlight-low before:absolute before:top-0 before:left-2 before:w-full before:h-full before:-skew-x-[20deg]"></div>
+        <div class="max-md:hidden flex-1 self-stretch -ml-1 overflow-x-hidden relative max-md:before:invisible before:-z-10 before:bg-rose-pine-dawn-highlight-low dark:before:bg-rose-pine-moon-highlight-low before:absolute before:top-0 before:left-2 before:w-full before:h-full before:-skew-x-20"></div>
     </nav>
 
     {/* Mobile menu */}
